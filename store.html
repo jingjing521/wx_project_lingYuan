@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>商家详情</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+		<style>
+			.mui-popup-title{background: none;color: #333;}
+			.swiper-slide{width: 48%;padding-right: 3%;box-sizing: border-box;}
+			.tip{position: absolute;left: 25%;top: 30%;width: 80px;line-height: 35px;background: #000000;text-align: center;background:#000000;opacity:0.5;filter:alpha(opacity=50);-moz-opacity:0.5;cursor: pointer;}
+			.coupons-b,.share,.btn_l{cursor: pointer;}
+			
+		</style>
+	</head>
+	<body>
+		<div id="store">
+			<header class="mui-bar mui-bar-transparent" style="background-color: rgba(251, 37, 44, 0);">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<a class="mui-icon smui-pull-right fr share"><img src="imgs/36.png" style="width: 25px;margin-right: 10px;"/></a>
+		    </header>
+		    <!--轮播-->
+			<div class="mui-content">
+				<div id="slider" class="mui-slider" >
+					<div class="mui-slider-group mui-slider-loop" style="height: 251px;">
+				      	<div class="mui-slider-item mui-slider-item-duplicate" style="height: 251px; overflow: hidden;"> <a href="javascript:;"> <img src="images/2.jpg"> </a></div>
+				      	<div class="mui-slider-item mui-slider-item-duplicate" style="height: 251px; overflow: hidden;"> <a href="javascript:;"> <img src="images/1.png"> </a></div>
+				      	<div class="mui-slider-item mui-slider-item-duplicate" style="height: 251px; overflow: hidden;"> <a href="javascript:;"> <img src="images/2.png"> </a></div>
+				      	<div class="mui-slider-item mui-slider-item-duplicate" style="height: 251px; overflow: hidden;"> <a href="javascript:;"> <img src="images/1.jpg"> </a></div>
+				      	<div class="mui-slider-item mui-slider-item-duplicate" style="height: 251px; overflow: hidden;"> <a href="javascript:;"> <img src="images/2.jpg"> </a></div>
+				      	<div class="mui-slider-item mui-slider-item-duplicate" style="height: 251px; overflow: hidden;"> <a href="javascript:;"> <img src="images/1.png"> </a></div>
+				      </div>
+				      <div class="mui-slider-indicator">
+				      	<div class="mui-indicator  mui-active"></div>
+				      	<div class="mui-indicator"></div>
+				      	<div class="mui-indicator"></div>
+				      	<div class="mui-indicator"></div>
+				      </div>
+				</div>
+			</div>
+			<!---->
+			<div class="details">
+				<div class="clearfix store_tit"><span class="fl tit">黛颜丽女子全身SPA</span><i class="fr collect"><img src="imgs/391.png"/></i></div>
+				<p class="store_des">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus</p>
+				<ul class="ul_info">
+				</ul>
+				<!--店铺活动-->
+				<div class="activity  shop_actiivty_list">
+					<div class="clearfix activity_tit"><span class="fl act">店铺活动</span><a href="javascript:;"><span class="fr all shop_actiivty_all">查看全部</span></a></div>
+					<div class="swiper-container">
+				        <div class="swiper-wrapper">
+				        	<div class="swiper-slide">
+				        		<div id="" style="height:180px;"><img src="'+v.activity_img+'" alt="" style="width: 100%;height:100%;"/><div class="tip" style="" data-id="'+v.bonus_id+'"><div style="color: #FFFFFF; !important">立即领取</div></div></div><p style="width: 100%;margin-top:10px;"><span style="color: #0D0D0D;font-size: 18px;padding-right: 9px;">'+v.bonus_amount+'折</span><span style="color: #0D0D0D;table-layout:fixed; word-break: break-all; overflow:hidden;">09:30-22:30</span></p><p style="width: 100%;color: #0D0D0D;">'+v.bonus_desc+'</p></div>			  
+				        </div>    
+				    </div>
+				</div>
+				<!--优惠券信息-->
+				<div class="activity shop_bonus_list">
+					<div class="clearfix activity_tit"><span class="fl act">优惠券信息</span><a href="javascript:;"><span class="fr all shopBonusMore">查看全部</span></a></div>
+				    <div class="coupons">
+					</div>
+				</div>
+				<!--用户评价-->
+				<div class="activity shop_comment_list">
+					<div class="clearfix activity_tit"><span class="fl act">用户评价(<i class="shop_comment_count">186</i>)</span><a href="javascript:;"><span class="fr all shopCommentsMore">查看全部</span></a></div>
+				    <ul class="comment_lists" style="width: 100%;box-sizing: border-box;">
+					</ul>
+					<a href="javascript:;"><div class="more_comm shopCommentsMore">查看更多</div></a>
+				</div>
+			</div>
+			<a href="javascript:;" class="btn_a"><div class="comm_btn"><img src="imgs/49.png" style="width: 25px;vertical-align: middle;margin-right: 10px;"/><span style="vertical-align: middle;">评价下这家店</span></div></a>
+			<!--分享-->
+			<div id="share" style="display: none;">
+				<ul class="clearfix">
+					<li>
+						<img src="imgs/22.png"/>
+						<div style="text-align: center">微信好友</div>
+					</li>
+					<li>
+						<img src="imgs/23.png"/>
+						<div style="text-align: center">朋友圈</div>
+					</li>
+					<li style="margin-top: 1%;">
+						<img src="imgs/24.png"/>
+						<div style="text-align: center">QQ</div>
+					</li>
+					<li>
+						<img src="imgs/25.png"/>
+						<div style="text-align: center">QQ空间</div>
+					</li>
+					<li>
+						<img src="imgs/26.png"/>
+						<div style="text-align: center">新浪微博</div>
+					</li>
+				</ul>
+				<div class="cancel">取消</div>
+			</div>
+		</div>
+		<div id="overlay"></div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-2.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/index.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			var user_id= localStorage.getItem('user_id');
+			console.log(user_id);
+			var shop_id=parseUrl().shop_id;
+			if(user_id == null||user_id =="" || user_id== undefined){
+				user_id='';
+			}
+			
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			$('#overlay').on('click',function(){
+				$('#share').css('display','none');
+				$('#overlay').css('display','none');
+				$('body').css('overflow','auto');
+			});
+			$('.cancel').on('click',function(){
+				$('#share').css('display','none');
+				$('#overlay').css('display','none');
+				$('body').css('overflow','auto');
+			});
+			$('#share ul').on('click','li',function(){
+				$('#share').css('display','none');
+				$('#overlay').css('display','none');
+				$('body').css('overflow','auto');
+			});
+			
+		    $('.mui-pull-left').on('click',function(){
+		        window.location.href="store.html?shop_id="+shop_id;
+		    })
+			$('.collect').on('click',function(){
+				if(user_id == null||user_id =="" || user_id== undefined){
+					var str=$(this);
+					var btnArray = ['登录', '取消'];
+					mui.confirm('', '收藏之前请先登录', btnArray, function(e) {
+						if (e.index == 0) {
+							window.location.href="login.html";
+						} else {
+						
+						}
+					})
+				}else{
+					if($(this).hasClass('col')){
+						$(this).removeClass('col');
+						$(this).find('img').attr('src','imgs/391.png');
+					}else{
+						$(this).addClass('col');
+						$(this).find('img').attr('src','imgs/39.png');
+					}
+					shopCollect();
+				}
+			})
+			/*商铺详情接口 shopDetail
+			shop_id	Int(11)	店铺id	Y	
+			user_id	Int(11)	用户id	N	
+			key	String	秘钥key	Y	
+			timestamp	Int(11)	时间戳	Y	
+			sign	String	签名	Y	
+			*/
+			var do_comment_permission="";
+			shopDetail();
+			function shopDetail(){
+				var timestamp = Date.parse(new Date());
+			  	var values=['timestamp','shop_id','user_id'];
+			  	var data={'timestamp':timestamp,'shop_id':shop_id,'user_id':user_id};
+			  	var sign = doSign(values,data);
+			  	$.ajax({
+			        type : "post",
+			        url : url+'shopDetail', 
+			        data:{'timestamp':timestamp,'shop_id':shop_id,'key':key,'sign':sign,'user_id':user_id}, 
+			        dataType : "json",
+			        async: false,
+					crossDomain: true,
+			        success : function(data){
+			        	console.log(data);
+			        	if(data.status==1){
+
+			        		$('.ul_info').empty();
+			        		$('.mui-slider-group').empty();
+			        		$('.mui-slider-indicator').empty();
+			        		$('.coupons').empty();
+			        		$('.comment_lists').empty();
+			        		$('.swiper-wrapper').empty();
+			        		//轮播图
+			        		do_comment_permission=data.data.do_comment_permission;
+			        		var shop_slide = data.data.shop_info.shop_slide;
+			        		if(shop_slide.length == 0){
+			        			$('.mui-content').css('padding-top','44px');
+			        		}else{
+			        			$('<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="'+shop_slide[0]+'"></div>').appendTo($('.mui-slider-group'));
+			        			$.each(shop_slide,function(i,v){
+			        				$('<div class="mui-slider-item"><a href="#"><img src="'+v+'"></a></div>').appendTo($('.mui-slider-group'));
+			        				$('<div class="mui-indicator"></div>').appendTo($('.mui-slider-indicator'));
+			        			});
+			        			$('.mui-slider-indicator').find('.mui-indicator').eq(0).addClass('mui-active');
+			        			$('<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="'+shop_slide[shop_slide.length-1]+'"></div>').appendTo($('.mui-slider-group'));
+			        		}
+			        		var slider = mui("#slider");
+								slider.slider({
+									interval: 5000
+							});
+							// 商品收藏is_collection
+							if(data.data.shop_info.is_collection == 0){
+								$('.collect').find('img').attr('src','imgs/391.png');
+							}else{
+								$('.collect').find('img').attr('src','imgs/39.png');
+							}
+			        		//店铺名字
+			        		$('span.tit').text(data.data.shop_info.shop_name);
+			        		// 店铺描述
+			        		if(data.data.shop_info.shop_intro==""){
+			        			$('p.store_des').css('display','none');
+			        		}else{
+			        			$('p.store_des').text(data.data.shop_info.shop_intro);
+			        		}
+			        		localStorage.setItem("lng1",data.data.shop_info.lng);
+			        		localStorage.setItem("lat1",data.data.shop_info.lat);
+			        		//店铺详细信息
+			        		if(data.data.shop_info.open_daily==''){
+			        			$('<li><a href="map_location.html?tit='+data.data.shop_info.shop_name+'"><img src="imgs/addr.png"/>'+data.data.shop_info.province+data.data.shop_info.city+data.data.shop_info.district+data.data.shop_info.shop_addr+'</a></li><li><a href="tel:'+data.data.shop_info.shop_tel+'"><img src="imgs/tel.png"/>'+data.data.shop_info.shop_tel+'</a></li>').appendTo($('.ul_info'))
+			        		}else{
+			        			$('<li><a href="map_location.html?tit='+data.data.shop_info.shop_name+'"><img src="imgs/addr.png"/>'+data.data.shop_info.province+data.data.shop_info.city+data.data.shop_info.district+data.data.shop_info.shop_addr+'</a></li><li><a href="tel:'+data.data.shop_info.shop_tel+'"><img src="imgs/tel.png"/>'+data.data.shop_info.shop_tel+'</a></li><li><img src="imgs/time.png" alt="" />'+data.data.shop_info.open_daily+'</li>').appendTo($('.ul_info'))
+			        		}
+			        		//店铺活动
+			        		if(data.data.shop_actiivty_list.length==0){
+			        			$('.shop_actiivty_list').css('display','none');
+			        		}else{
+			        			$.each(data.data.shop_actiivty_list,function(i,v){
+				        			console.log(v);
+				        			if(v.bonus_type==2){
+				        				$('<div class="swiper-slide"><div id="" style="height:180px;"><img src="'+v.activity_img+'" alt="" style="width: 100%;height:100%;"/><div class="tip" style="" data-id="'+v.bonus_id+'"><div style="color: #FFFFFF; !important">立即领取</div></div></div><p style="width: 100%;margin-top:10px;"><span style="color: #0D0D0D;font-size: 18px;padding-right: 9px;">'+v.bonus_amount+'折</span><span style="color: #0D0D0D;table-layout:fixed; word-break: break-all; overflow:hidden;">09:30-22:30</span></p><p style="width: 100%;color: #0D0D0D;">'+v.bonus_desc+'</p></div>').appendTo($('.swiper-wrapper'))
+				        			}else{
+				        				$('<div class="swiper-slide"><div id="" style="height:180px;"><img src="'+v.activity_img+'" alt="" style="width: 100%;height:100%;"/><div class="tip" style="" data-id="'+v.bonus_id+'"><div style="color: #FFFFFF; !important">立即领取</div></div></div><p style="width: 100%;margin-top:10px;"><span style="color: #0D0D0D;font-size: 18px;padding-right: 9px;">'+v.bonus_amount+'元</span><span style="color: #0D0D0D;table-layout:fixed; word-break: break-all; overflow:hidden;">09:30-22:30</span></p><p style="width: 100%;color: #0D0D0D;">'+v.bonus_desc+'</p></div>').appendTo($('.swiper-wrapper'))
+				        			}
+
+				        		})
+			        		}
+			        		var swiper = new Swiper('.swiper-container', {
+						        pagination: '.swiper-pagination',
+						        slidesPerView: 'auto',
+						        paginationClickable: false,
+						        spaceBetween: 0
+						    });
+			        		//优惠券信息
+			        		// bonus_type[类型1优惠券 2折扣券 3满减券 4代金券]
+			        		if(data.data.shop_bonus_list.length==0){
+			        			$('.shop_bonus_list').css('display','none');
+			        		}else{
+			        			$.each(data.data.shop_bonus_list,function(i,v){
+			        				// user_get_unused_count 0无可用优惠券 1有可用优惠券
+				        			// bonus_type[类型1优惠券 2折扣券 3满减券 4代金券]
+			        				// 立即领取
+			        				if(v.user_get_unused_count == 0 && v.user_get_count>v.limit_num){
+			        					if(v.bonus_type == 2){
+					        				$('<div class="coupons-b" data-id="'+v.bonus_id+'"><div class="coupons-b-item"><div class="coupons-b-item-con clearfix"><div class="fl coupons-b-item-con-img"><img src="imgs/43.png"></div><div class="fl coupons-b-item-con-xx"><div class="clearfix"><div class="fl coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class="fr coupons-b-item-btn btn_l" data-id="'+v.bonus_id+'">立即领取</div></div><div class="coupons-b-item-con-title" style="color: #0D0D0D;">'+v.bonus_desc+'</div><div class="clearfix"><div class="fl coupons-b-item-con-data" style="color: #0D0D0D;">'+v.start_time_format+'-'+v.end_time_format+'</div><div class="fr" style="font-size:14px">已领取('+v.get_all_num+')</div></div></div></div></div></div>').appendTo($('.coupons'))
+					        			}else if(v.bonus_type == 1){
+					        				$('<div class="coupons-b" data-id="'+v.bonus_id+'"><div class="coupons-b-item"><div class="coupons-b-item-con clearfix"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class="clearfix"><div class="fl coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class="fr coupons-b-item-btn btn_l" data-id="'+v.bonus_id+'">立即领取</div></div><div class="coupons-b-item-con-title" style="color: #0D0D0D;">'+v.bonus_desc+'</div><div class="clearfix"><div class="fl coupons-b-item-con-data" style="color: #0D0D0D;">'+v.start_time_format+'-'+v.end_time_format+'</div><div class="fr" style="font-size:14px">已领取('+v.get_all_num+')</div></div></div></div></div></div>').appendTo($('.coupons'))
+					        			}else if(v.bonus_type == 3){
+					        				$('<div class="coupons-b" data-id="'+v.bonus_id+'"><div class="coupons-b-item"><div class="coupons-b-item-con clearfix"><div class="fl coupons-b-item-con-img"><img src="imgs/44.png"></div><div class="fl coupons-b-item-con-xx"><div class="clearfix"><div class="fl coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class="fr coupons-b-item-btn btn_l" data-id="'+v.bonus_id+'">立即领取</div></div><div class="coupons-b-item-con-title" style="color: #0D0D0D;">'+v.bonus_desc+'</div><div class="clearfix"><div class="fl coupons-b-item-con-data" style="color: #0D0D0D;">'+v.start_time_format+'-'+v.end_time_format+'</div><div class="fr" style="font-size:14px">已领取('+v.get_all_num+')</div></div></div></div></div></div>').appendTo($('.coupons'))
+					        			}else if(v.bonus_type == 4){
+					        				$('<div class="coupons-b" data-id="'+v.bonus_id+'"><div class="coupons-b-item"><div class="coupons-b-item-con clearfix"><div class="fl coupons-b-item-con-img"><img src="imgs/45.png"></div><div class="fl coupons-b-item-con-xx"><div class="clearfix"><div class="fl coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class="fr coupons-b-item-btn btn_l" data-id="'+v.bonus_id+'">立即领取</div></div><div class="coupons-b-item-con-title" style="color: #0D0D0D;">'+v.bonus_desc+'</div><div class="clearfix"><div class="fl coupons-b-item-con-data" style="color: #0D0D0D;">'+v.start_time_format+'-'+v.end_time_format+'</div><div class="fr" style="font-size:14px">已领取('+v.get_all_num+')</div></div></div></div></div></div>').appendTo($('.coupons'))
+					        			}
+			        				// 马上使用
+			        				}else if(v.user_get_unused_count == 1){
+				        				if(v.bonus_type == 2){
+					        				$('<div class="coupons-b" data-id="'+v.bonus_id+'"><div class="coupons-b-item"><div class="coupons-b-item-con clearfix"><div class="fl coupons-b-item-con-img"><img src="imgs/43.png"></div><div class="fl coupons-b-item-con-xx"><div class="clearfix"><div class="fl coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class="fr coupons-b-item-btn user" data-id="'+v.bonus_id+'">马上使用</div></div><div class="coupons-b-item-con-title" style="color: #0D0D0D;">'+v.bonus_desc+'</div><div class="clearfix"><div class="fl coupons-b-item-con-data" style="color: #0D0D0D;">'+v.start_time_format+'-'+v.end_time_format+'</div><div class="fr" style="font-size:14px">已领取('+v.get_all_num+')</div></div></div></div></div></div>').appendTo($('.coupons'))
+					        			}else if(v.bonus_type == 1){
+					        				$('<div class="coupons-b" data-id="'+v.bonus_id+'"><div class="coupons-b-item"><div class="coupons-b-item-con clearfix"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class="clearfix"><div class="fl coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class="fr coupons-b-item-btn user" data-id="'+v.bonus_id+'">马上使用</div></div><div class="coupons-b-item-con-title" style="color: #0D0D0D;">'+v.bonus_desc+'</div><div class="clearfix"><div class="fl coupons-b-item-con-data" style="color: #0D0D0D;">'+v.start_time_format+'-'+v.end_time_format+'</div><div class="fr" style="font-size:14px">已领取('+v.get_all_num+')</div></div></div></div></div></div>').appendTo($('.coupons'))
+					        			}else if(v.bonus_type == 3){
+					        				$('<div class="coupons-b" data-id="'+v.bonus_id+'"><div class="coupons-b-item"><div class="coupons-b-item-con clearfix"><div class="fl coupons-b-item-con-img"><img src="imgs/44.png"></div><div class="fl coupons-b-item-con-xx"><div class="clearfix"><div class="fl coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class="fr coupons-b-item-btn user" data-id="'+v.bonus_id+'">马上使用</div></div><div class="coupons-b-item-con-title" style="color: #0D0D0D;">'+v.bonus_desc+'</div><div class="clearfix"><div class="fl coupons-b-item-con-data" style="color: #0D0D0D;">'+v.start_time_format+'-'+v.end_time_format+'</div><div class="fr" style="font-size:14px">已领取('+v.get_all_num+')</div></div></div></div></div></div>').appendTo($('.coupons'))
+					        			}else if(v.bonus_type == 4){
+					        				$('<div class="coupons-b" data-id="'+v.bonus_id+'"><div class="coupons-b-item"><div class="coupons-b-item-con clearfix"><div class="fl coupons-b-item-con-img"><img src="imgs/45.png"></div><div class="fl coupons-b-item-con-xx"><div class="clearfix"><div class="fl coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class="fr coupons-b-item-btn user" data-id="'+v.bonus_id+'">马上使用</div></div><div class="coupons-b-item-con-title" style="color: #0D0D0D;">'+v.bonus_desc+'</div><div class="clearfix"><div class="fl coupons-b-item-con-data" style="color: #0D0D0D;">'+v.start_time_format+'-'+v.end_time_format+'</div><div class="fr" style="font-size:14px">已领取('+v.get_all_num+')</div></div></div></div></div></div>').appendTo($('.coupons'))
+					        			}
+				        			// 立即分享
+				        			}else if(v.user_get_unused_count == 0 && v.user_get_count>=v.limit_num){
+				        				if(v.bonus_type == 2){
+					        				$('<div class="coupons-b" data-id="'+v.bonus_id+'"><div class="coupons-b-item"><div class="coupons-b-item-con clearfix"><div class="fl coupons-b-item-con-img"><img src="imgs/43.png"></div><div class="fl coupons-b-item-con-xx"><div class="clearfix"><div class="fl coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class="fr coupons-b-item-btn share" data-id="'+v.bonus_id+'">立即分享</div></div><div class="coupons-b-item-con-title" style="color: #0D0D0D;">'+v.bonus_desc+'</div><div class="clearfix"><div class="fl coupons-b-item-con-data" style="color: #0D0D0D;">'+v.start_time_format+'-'+v.end_time_format+'</div><div class="fr" style="font-size:14px">已领取('+v.get_all_num+')</div></div></div></div></div></div>').appendTo($('.coupons'))
+					        			}else if(v.bonus_type == 1){
+					        				$('<div class="coupons-b" data-id="'+v.bonus_id+'"><div class="coupons-b-item"><div class="coupons-b-item-con clearfix"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class="clearfix"><div class="fl coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class="fr coupons-b-item-btn share" data-id="'+v.bonus_id+'">立即分享</div></div><div class="coupons-b-item-con-title" style="color: #0D0D0D;">'+v.bonus_desc+'</div><div class="clearfix"><div class="fl coupons-b-item-con-data" style="color: #0D0D0D;">'+v.start_time_format+'-'+v.end_time_format+'</div><div class="fr" style="font-size:14px">已领取('+v.get_all_num+')</div></div></div></div></div></div>').appendTo($('.coupons'))
+					        			}else if(v.bonus_type == 3){
+					        				$('<div class="coupons-b" data-id="'+v.bonus_id+'"><div class="coupons-b-item"><div class="coupons-b-item-con clearfix"><div class="fl coupons-b-item-con-img"><img src="imgs/44.png"></div><div class="fl coupons-b-item-con-xx"><div class="clearfix"><div class="fl coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class="fr coupons-b-item-btn share" data-id="'+v.bonus_id+'">立即分享</div></div><div class="coupons-b-item-con-title" style="color: #0D0D0D;">'+v.bonus_desc+'</div><div class="clearfix"><div class="fl coupons-b-item-con-data" style="color: #0D0D0D;">'+v.start_time_format+'-'+v.end_time_format+'</div><div class="fr" style="font-size:14px">已领取('+v.get_all_num+')</div></div></div></div></div></div>').appendTo($('.coupons'))
+					        			}else if(v.bonus_type == 4){
+					        				$('<div class="coupons-b" data-id="'+v.bonus_id+'"><div class="coupons-b-item"><div class="coupons-b-item-con clearfix"><div class="fl coupons-b-item-con-img"><img src="imgs/45.png"></div><div class="fl coupons-b-item-con-xx"><div class="clearfix"><div class="fl coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class="fr coupons-b-item-btn share" data-id="'+v.bonus_id+'">立即分享</div></div><div class="coupons-b-item-con-title" style="color: #0D0D0D;">'+v.bonus_desc+'</div><div class="clearfix"><div class="fl coupons-b-item-con-data" style="color: #0D0D0D;">'+v.start_time_format+'-'+v.end_time_format+'</div><div class="fr" style="font-size:14px">已领取('+v.get_all_num+')</div></div></div></div></div></div>').appendTo($('.coupons'))
+					        			}
+				        			}			        				 				        			
+				        		})
+			        		}
+			        		//评论
+			        		$('.shop_comment_count').text(data.data.shop_comment_count);
+			        		if(data.data.shop_comment_list.length == 0){
+			        			$('<div style="text-align: center;line-height: 30px;">暂无评论~~~</div>').appendTo($('.comment_lists'));
+			        			$('.shopCommentsMore').css('display','none');
+			        		}else{
+			        			$.each(data.data.shop_comment_list,function(i,v){
+			        				if(i>=3){
+			        					return false;
+			        				}
+				        			var star=v.star_level;
+									var stars=Math.round(star);
+									var avatar = v.avatar || 'imgs/35.png';
+				        			$('<li class="clearfix"><div class="leftArea head_imgs"><img src="'+avatar+'"/></div><div class="lefArea" style="padding-left: 70px;"><p class="clearfix" style="line-height: 30px;display: inline-block;"><p class="nickname fl">'+v.user_nicename+'</p><p class="date fr">'+v.add_time+'</p></p><div class="starts star"></div><p class="content">'+v.content+'</p><div class="img_lists"></div></div></li>').appendTo($('.comment_lists'));
+				        			    $.each(v.smeta,function(x,y){
+				        			    	console.log(v.smeta);
+				        			    	$('<div class="div_img"><img src="'+y+'" alt="" /></div>').appendTo($('.comment_lists').find('.img_lists').eq(i))
+				        			    });
+				        			    if(stars==1){
+											$('<a data-num="1" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="2" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="3" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="4" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="5" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a>').appendTo($(".star").eq(i));
+										}else if(stars==2){
+											$('<a data-num="1" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="2" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="3" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="4" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="5" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a>').appendTo($(".star").eq(i));
+										}else if(stars==3){
+											$('<a data-num="1" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="2" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="3" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="4" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="5" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a>').appendTo($(".star").eq(i));
+										}else if(stars==4){
+											$('<a data-num="1" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="2" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="3" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="4" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="5" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a>').appendTo($(".star").eq(i));
+											
+										}else if(stars==5){
+											$('<a data-num="1" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="2" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="3" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="4" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="5" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a>').appendTo($(".star").eq(i));
+											
+										}  
+					        	});
+			        		}
+			        	}
+			        }  
+			    })
+			}
+			//优惠券活动
+			$('.shopBonusMore').on('click',function(){
+				window.location.href="coupon_list.html?shop_id="+shop_id;
+			});
+			/*卡券领取接口 bonusReceipt
+			bonus_id	Int	卡券id	Y	
+			user_id	Int	用户id	Y	
+			key	String	秘钥key	Y	
+			timestamp	Int(11)	时间戳	Y	
+			sign	String	签名	Y	*/
+			var bonus_id="";
+			function bonusReceipt(){
+				var timestamp = Date.parse(new Date());
+			  	var values=['timestamp','bonus_id','user_id'];
+			  	var data={'timestamp':timestamp,'bonus_id':bonus_id,'user_id':user_id,};
+			  	var sign = doSign(values,data);
+			  	$.ajax({
+			        type : "post",
+			        url : url+'bonusReceipt', 
+			        data:{'timestamp':timestamp,'bonus_id':bonus_id,'key':key,'sign':sign,'user_id':user_id}, 
+			        dataType : "json",
+			        success : function(data){
+			        	console.log(data);
+			        	alert(data.data);
+			        	if(data.status==1){ 
+			        	}
+			        }  
+			    })
+			}
+			// 优惠券领取
+			$(document).on('click','.btn_l',function(event){
+				bonus_id=$(this).attr('data-id');
+				if(user_id == null||user_id =="" || user_id== undefined){
+					var str=$(this);
+					var btnArray = ['登录', '取消'];
+					mui.confirm('', '领取优惠券之前请先登录', btnArray, function(e) {
+						if (e.index == 0) {
+							window.location.href="login.html";
+						} else {
+						}
+					})
+				}else{
+					bonusReceipt();
+					shopDetail();
+				}
+				event.stopPropagation();    	
+			});
+			// 分享
+			$(document).on('click','.share',function(event){
+				if(user_id == null||user_id =="" || user_id== undefined){
+					var str=$(this);
+					var btnArray = ['登录', '取消'];
+					mui.confirm('', '分享之前请先登录', btnArray, function(e) {
+						if (e.index == 0) {
+							window.location.href="login.html";
+						} else {
+						}
+					})
+				}else{
+					$('#share').css('display','block');
+					$('#overlay').css('display','block');
+					$('body').css('overflow','hidden');
+					var docHeight = $(document).height(); //获取窗口高度  
+					var h = "105px";
+				    $('#overlay')  
+					    .height(docHeight)  
+					    .css({  
+					        'opacity': .5, //透明度  
+					        'position': 'absolute',  
+					        'top': 0,  
+					        'left': 0,  
+					        'background-color': 'black',  
+					        'width': '100%',  
+					        'z-index': 99 //保证这个悬浮层位于其它内容之上  
+					});
+				}
+				event.stopPropagation();    
+			});
+			// 店铺活动
+			$(document).on('click','.tip',function(event){
+				bonus_id=$(this).attr('data-id');
+				console.log(bonus_id);
+				console.log(user_id);
+				if(user_id == null||user_id =="" || user_id== undefined){
+					var str=$(this);
+					var btnArray = ['登录', '取消'];
+					mui.confirm('', '参与店铺活动之前请先登录', btnArray, function(e) {
+						if (e.index == 0) {
+							window.location.href="login.html";
+						} else {
+						}
+					})
+				}else{
+					bonusReceipt();
+					// shopDetail();
+				}
+				event.stopPropagation();    	
+			});
+			$(document).on('click','.user',function(event){
+				if(user_id == null||user_id =="" || user_id== undefined){
+					var str=$(this);
+					var btnArray = ['登录', '取消'];
+					mui.confirm('', '使用优惠券之前请先登录', btnArray, function(e) {
+						if (e.index == 0) {
+							window.location.href="login.html";
+						} else {
+						}
+					})
+				}else{
+					window.location.href="coupons-no.html";
+				}
+				event.stopPropagation();
+			})
+			//评价列表
+			$('.shopCommentsMore').on('click',function(){
+				window.location.href="comment_lists.html?shop_id="+shop_id;
+			});
+			// 评论按钮
+			$('.comm_btn').on('click',function(){
+				console.log(do_comment_permission);
+
+				if(user_id == null||user_id =="" || user_id== undefined){
+					var str=$(this);
+					var btnArray = ['登录', '取消'];
+					mui.confirm('', '评论之前请先登录', btnArray, function(e) {
+						if (e.index == 0) {
+							window.location.href="login.html";
+						} else {
+						}
+					})
+				}else{
+					if(do_comment_permission == 0){
+					    mui.alert('您当前暂无权限评论', '', function() {});
+					}else{
+						window.location.href="comment.html?shop_id="+shop_id; 
+					}
+				}
+			});
+			//店铺活动
+			$('.shop_actiivty_all').on('click',function(){
+				window.location.href="store_act.html?shop_id="+shop_id;
+			});
+			/*店铺收藏/取消收藏接口 shopCollect
+			shop_id	Int	店铺id	Y	
+			user_id	Int	用户id	Y	
+			key	String	秘钥key	Y	
+			timestamp	Int(11)	时间戳	Y	
+			sign	String	签名	Y	*/
+			function shopCollect(){
+				var timestamp = Date.parse(new Date());
+			  	var values=['timestamp','shop_id','user_id'];
+			  	var data={'timestamp':timestamp,'shop_id':shop_id,'user_id':user_id,};
+			  	var sign = doSign(values,data);
+			  	$.ajax({
+			        type : "post",
+			        url : url+'shopCollect', 
+			        data:{'timestamp':timestamp,'shop_id':shop_id,'key':key,'sign':sign,'user_id':user_id}, 
+			        dataType : "json",
+			        success : function(data){
+			        	console.log(data);
+			        	if(data.status==1){	 
+			        	}
+			        }  
+			    })
+			}
+			var img1="";
+			var img2="";
+			var img3="";
+			var img4="";
+			var img5="";
+			var img6="";
+			var star_level="";
+			var content="";
+			function shopDoComment(){
+				var timestamp = Date.parse(new Date());
+			  	var values=['timestamp','shop_id','user_id','star_level','content'];
+			  	var data={'timestamp':timestamp,'shop_id':shop_id,'user_id':user_id,'star_level':star_level,'content':content};
+			  	var sign = doSign(values,data);
+			  	$.ajax({
+			        type : "post",
+			        url : url+'shopDoComment', 
+			        data:{'timestamp':timestamp,'shop_id':shop_id,'key':key,'sign':sign,'user_id':user_id,'star_level':star_level,'content':content,'img1':img1,'img2':img2,'img3':img3,'img4':img4,'img5':img5,'img6':img6}, 
+			        dataType : "json",
+			        success : function(data){
+			        	console.log(data);
+			        	if(data.status==1){
+			        		
+			        	}else{
+			        		
+			        	}
+			        }  
+			    })
+			}
+		</script>
+	 </body>
+</html>

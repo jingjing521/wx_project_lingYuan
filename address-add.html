@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+   		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>新增地址</title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<!--定位-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<style>
+			.weui-picker-modal .picker-item {font-size: 14px;}
+		</style>
+	</head>
+	<body style="background: #fff;">
+		<div id="address">
+			<!--<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">新增地址</h1>
+			</header>-->
+			<div class="mui-content" style="background: #fff;">
+			    <div class="address-item">
+			    	<div class="address-item-name fl">姓名</div>
+			    	<div class="address-item-input fl"><input type="text" class="name" placeholder="请输入您的姓名"> </div>
+			    </div>
+			    <div class="address-item">
+			    	<div class="address-item-name fl">性别</div>
+			    	<div class="address-item-input fl">
+			    		<div class="fr">
+ 							<div class="commodity fl ml" sid="2"></div>女
+						</div>
+						<div class="fr">
+							<div class="commodity select fl" sid="1"></div>男
+						</div>
+						<div class="clear"></div>
+			    	</div>
+			    </div>
+			    <div class="address-item">
+			    	<div class="address-item-name fl">联系电话</div>
+			    	<div class="address-item-input fl"><input type="text" maxlength="11" class="phone" placeholder="请输入您的联系电话"> </div>
+			    </div>
+			     <div class="address-item">
+			    	<div class="address-item-name fl">地址特点</div>
+			    	<div class="address-item-input fl " id="cityResults"><span id="cityResult">公司</span><img src="images/bottom.png"></div>
+			    </div>
+			    <div class="address-item">
+			    	<div class="address-item-name fl">地址</div>
+			    	<div class="address-item-input fl" id="showCityPicker3"><input onclick="addr()" type="text" data-codes="" id="cityResult3" class="address" readonly="readonly" placeholder="请选择地址"> </div>
+			    </div>
+			    <div class="address-item">
+			    	<div class="address-item-name fl">详细地址</div>
+			    	<div class="address-item-input fl"><input type="text" class="address-xx" placeholder="请输入您的详细地址"> </div>
+			    </div>
+			    <div class="address-item">
+				    	<div class="address-item-name fl">小区名称</div>
+				    	<div class="address-item-input fl "id="xq"><input type="text" readonly="readonly" onclick="xq()"  id="xqs" style="margin-right: 5px; width: 70%; text-align: right;" placeholder="请输入"><img src="images/bottom.png"></div>
+				   		<div class="clear"></div>
+			    	</div>
+				    <div class="address-item">
+				    	<div class="address-item-name fl">楼栋号</div>
+				    	<div class="address-item-input fl " id="ld"><span id="lds"  >请选择</span><img src="images/bottom.png"></div>
+				    	<div class="clear"></div>
+				    </div>
+				    <div class="address-item">
+				    	<div class="address-item-name fl">门牌号</div>
+				    	<div class="address-item-input fl " id="mp"><input type="text"  id="mps" style="margin-right: 5px; width: 70%; text-align: right;" placeholder="请输入"></span>室</div>
+				    	<div class="clear"></div>
+				    </div>
+				    <div class="address-item" style="border-bottom: 0; overflow: hidden;">
+				    	<div class="address-con-b-imgs fl">
+							<div class="commodity  fl"></div>未查询到小区
+						</div>
+						<div class="clear"></div>
+				    </div>
+				    <div class="address-item jt" style="display: none;">
+				    	<div class="address-item-name fl">小区名称</div>
+				    	<div class="address-item-input fl"><input type="text" class="address-xname" placeholder="请输入您的小区名称" value=""> </div>
+				    	<div class="clear"></div>
+				    </div>
+			    
+			    <div class="btn">保存</div>
+			</div>
+			
+		</div>
+		<script type="text/javascript" src="js/mui.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-2.2.1.js" ></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script src="js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/md5.js" ></script>
+		<script type="text/javascript" src="js/city-pickers.js" ></script>
+		<script type="text/javascript" src="js/fastclick.js" ></script>
+		<script type="text/javascript" src="js/jquery-weui.js" ></script>
+		<script>
+			var key="idf5nsi5t0qbemwo12hztbftm53tbv6pht";
+			var arr=["智慧社区","亚希花园"];
+			var arr2=[];
+			var nums=[];
+			var ids=[];
+
+
+			// 地址选择
+			function addr(){
+				var cityPicker3 = new mui.PopPicker({
+					layer: 3
+				});
+				cityPicker3.setData(cityData3);
+				var showCityPickerButton = document.getElementById('showCityPicker3');
+				var cityResult3 = document.getElementById('cityResult3');
+				cityPicker3.show(function(items) {
+					cityResult3.value =  (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+					cityResult3.setAttribute("province",(items[0] || {}).value)
+					cityResult3.setAttribute("city",(items[1] || {}).value)
+					cityResult3.setAttribute("district",(items[2] || {}).value)
+					// qlist((items[0] || {}).value,(items[1] || {}).value,(items[2] || {}).value);
+				});
+			}
+// 			function qlist(province,city,district){
+// 				var timestamp =Date.parse(new Date());
+// 				var value=["province","city","district","timestamp"];
+// 				var data = {"province":province,"city":city,"district":district,"timestamp": timestamp};
+// 				var sign=doSign(value,data);
+// 				$.ajax({
+// 					type:"post",
+// 					url:link_url+"getNeighborhoodList",
+// 					dataType:"json",
+// 					async:false,
+// 					corssDomain:true,
+// 					data:{"province":province,"city":city,"district":district,"key":key,"sign":sign,"timestamp":timestamp},
+// 					success:function(data){
+// 						console.log(data);
+// 						if(data.status==1){
+// 							ids=[];
+// 							arr=[];
+// 							$.each(data.data, function(i,v) {
+// 								var id=v.nbh_id;
+// 								var d=v.name;
+// 								var num=v.num;
+// 								var aa={"value":id,"text":d,"num":num}
+// 								var bb={"value":id,"text":d,"num":num}
+// 								arr.push(aa);
+// 								ids.push(id);
+// 								nums.push(bb);
+								
+// 							});
+							  
+// 						}else{
+// //							mui.toast(data.data);
+// 						}
+// 					},error:function(e){
+// 							console.log(e);
+// 					}
+// 				});
+// 			}
+//			 $("#start").cityPicker({
+//		        title: "选择地区",
+//		        onChange: function (picker, values, displayValues) {
+//		          console.log(values, displayValues);
+//		          console.log(values);
+//		        }
+//		     });
+//		     $("#xqs").click(function(){
+//		     	  var hq=$("#start").attr("data-codes");
+//		     	  if(hq==""){
+//		     	  	mui.toast("请先选择地址！")
+//		     	  }else{
+//		     	  	var arrs1=new Array();
+//					  arrs1=hq.split(",");
+//					  var a=parseInt(arrs1[0]);
+//				      var b=parseInt(arrs1[1]);
+//					  var c=parseInt(arrs1[2]);
+//					  console.log(a);
+//					  console.log(b);
+//					  console.log(c);
+//					  arr=[];
+//					  ids=[];
+//					  qlist(a,b,c);
+//					  console.log(arr);
+//					  console.log(ids);
+//					  var arr5=['11111','22222',''];
+//					   $("#xqs").picker({
+//					        title: "你喜欢的国家",
+//					        toolbarCloseText:'确定',
+//					        cols: [
+//					          {
+//					            textAlign: 'center',
+//					            values: [1,2,3],
+//					            displayValues:arr,
+//					          }
+//					        ]
+//					      });
+//		     	  }
+//		          
+//		    
+//		     })
+		   			
+					function xq(){
+						// if($("#cityResult3").val()==""){
+						// 	mui.toast("暂无小区")
+						// }else{
+							// var arr=[];
+//							var a=localStorage.getItem("arr");
+//							arr.push(a);
+							console.log(arr);
+							var xqPicker = new mui.PopPicker();
+							xqPicker.setData(arr);
+							var xq = document.getElementById('xq');
+							var xqs = document.getElementById('xqs');
+							xqPicker.show(function(items) {
+								var v=items[0];
+								console.log(v);
+								xqs.value =v.text ;
+								xqs.setAttribute("nbh_id",v.value);
+								xqs.setAttribute("num",v.num);
+								//返回 false 可以阻止选择框的关闭
+								//return false;
+							});
+						// }
+						
+					}
+
+					$("#lds").click(function(){
+						if($("#xqs").val()==""){
+							mui.toast("请先选择小区！");
+						}else{
+							var nums=$("#xqs").attr("num");
+							arr2=[];
+							for(var i=1;i<=nums;i++){
+								var a={"value":i,"text":i+"号楼"}
+								arr2.push(a);
+							}
+							var ldPicker = new mui.PopPicker();
+							ldPicker.setData(arr2);
+							var ld = document.getElementById('ld');
+							var lds = document.getElementById('lds');
+							ldPicker.show(function(items) {
+								var v=items[0];
+								lds.innerText =v.text ;
+								lds.setAttribute("num",v.value)
+							});
+						}
+					});
+					
+					
+					//普通示例
+					var userPicker = new mui.PopPicker();
+					userPicker.setData([{
+						value: 'home',
+						text: '家'
+					}, {
+						value: 'gs',
+						text: '公司'
+					}]);
+					var cityResults = document.getElementById('cityResults');
+					var cityResult = document.getElementById('cityResult');
+					cityResults.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							var v=items[0];
+							cityResult.innerText =v.text ;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+//					
+					
+					var mpPicker = new mui.PopPicker();
+					mpPicker.setData([{
+						value: '1001',
+						text: '1001'
+					}, {
+						value: '1002',
+						text: '1002'
+					}, {
+						value: '1003',
+						text: '1003'
+					}, {
+						value: '1004',
+						text: '1004'
+					}, {
+						value: '1005',
+						text: '1005'
+					}]);
+					var mp = document.getElementById('mp');
+					var mps = document.getElementById('mps');
+					mp.addEventListener('tap', function(event) {
+						mpPicker.show(function(items) {
+							var v=items[0];
+							mps.innerText =v.text ;
+							
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+					
+	
+			
+			
+			$(".address-item-input").on("click",".commodity",function(){
+			 	$(".commodity").removeClass("select");
+			 	$(this).addClass("select");
+			 });
+			 $(".address-con-b-imgs").click(function(){
+			 	$(this).children(".commodity").toggleClass("select")
+			 	if($(this).children(".commodity").hasClass("select")){
+			 		$(".jt").show();
+			 	}else{
+			 		$(".jt").hide();
+			 	}
+			 })
+			 
+			 $(".btn").click(function(){
+			 	var user_id=localStorage.getItem("user_id");
+			 	var user_name=$(".name").val();
+			 	var phone=$(".phone").val();
+			 	var address=$(".address").val();
+			 	var sex=$(".select").attr("sid");
+			 	var addr_type1=$("#cityResult").text();
+			 	var addr_type="";
+			 	if(addr_type1=="家"){
+			 		addr_type=1;
+			 	}else if(addr_type1=="公司"){
+			 		addr_type=2;
+			 	}
+			 	var province=$("#cityResult3").attr("province");
+			 	var city=$("#cityResult3").attr("city");
+			 	var district=$("#cityResult3").attr("district");
+			 	var nbh_id=$("#xqs").attr("nbh_id");
+			 	var block=$("#lds").attr("num");
+			 	var room_no=$("#mps").val();
+				var regx = /^(13[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(18[0-9]{9})|(15[0-9]{9})$/;
+				
+				if($(".address-con-b-imgs").children(".commodity").hasClass("select")){
+					var addr_deatail=$(".address-xx").val();
+					var nbh_name=$(".address-xname").val();
+					if(user_name==''){
+				 		mui.toast("请输入您的姓名！")
+				 	}else if(phone==''){
+				 		mui.toast("请输入您的联系电话！")
+				 	}else if(phone.length < 11 ||!regx.test(phone)){
+						mui.toast("请输入正确手机号码！")
+					}else if(address==''){
+				 		mui.toast("请输入您的地址！")
+				 	}else if(nbh_id==''){
+				 		mui.toast("请选择小区！")
+				 	}else{
+				 		
+				 		var timestamp =Date.parse(new Date());
+						var value=["user_id","phone","user_name","sex","addr_type","province","city","district","nbh_name","block","room_no","addr_deatail","timestamp"];
+						var data = {"user_id": user_id,"phone":phone,"user_name":user_name,"sex":sex,"addr_type":addr_type,"province":province,"city":city,"district":district,"nbh_name":nbh_name,"block":block,"room_no":room_no,"addr_deatail":addr_deatail,"timestamp": timestamp};
+						var sign=doSign(value,data);
+						$.ajax({
+							type:"post",
+							url:link_url+"userAddressFeedBack",
+							dataType:"json",
+							data:{"user_id": user_id,"phone":phone,"user_name":user_name,"sex":sex,"addr_type":addr_type,"province":province,"city":city,"district":district,"nbh_name":nbh_name,"block":block,"room_no":room_no,"addr_deatail":addr_deatail,"key":key,"sign":sign,"timestamp":timestamp},
+							success:function(data){
+								console.log(data);
+								console.log(user_id+","+phone+","+user_name+","+sex+","+addr_type+","+province+","+city+","+district+","+nbh_name+","+block+","+room_no+","+addr_deatail);
+								if(data.status==1){
+									mui.toast("添加成功！");
+									setInterval(function(){
+										if(parseUrl().type==0){
+									 		window.location.href="address.html";
+								 		}else if(parseUrl().type==2){
+									 		window.location.href="address-c.html";
+								 		}else{
+								 			window.location.href="positioning.html";
+								 		}
+									},1500)
+								}else{
+									mui.toast(data.data);
+								}
+							},error:function(e){
+								console.log(e);
+							}
+						});
+				 		
+	
+				 	}
+				}else{
+					var addr_deatail=$(".address-xx").val();
+					if(user_name==''){
+				 		mui.toast("请输入您的姓名！")
+				 	}else if(phone==''){
+				 		mui.toast("请输入您的联系电话！")
+				 	}else if(phone.length < 11 ||!regx.test(phone)){
+						mui.toast("请输入正确手机号码！")
+					}else if(address==''){
+				 		mui.toast("请输入您的地址！")
+				 	}else if(addr_deatail==''){
+				 		mui.toast("请输入您的详细地址！")
+				 	}else if(nbh_id==''){
+				 		mui.toast("请选择小区！")
+				 	}else if(block==''){
+				 		mui.toast("请选择楼栋号！")
+				 	}else if(room_no==''){
+				 		mui.toast("请输入门牌号！")
+				 	}else{
+				 		
+				 		var timestamp =Date.parse(new Date());
+						var value=["user_id","phone","user_name","sex","addr_type","province","city","district","nbh_id","block","room_no","addr_deatail","timestamp"];
+						var data = {"user_id": user_id,"phone":phone,"user_name":user_name,"sex":sex,"addr_type":addr_type,"province":province,"city":city,"district":district,"nbh_id":nbh_id,"block":block,"room_no":room_no,"addr_deatail":addr_deatail,"timestamp": timestamp};
+						var sign=doSign(value,data);
+						$.ajax({
+							type:"post",
+							url:link_url+"userAddressAdd",
+							dataType:"json",
+							data:{"user_id": user_id,"phone":phone,"user_name":user_name,"sex":sex,"addr_type":addr_type,"province":province,"city":city,"district":district,"nbh_id":nbh_id,"block":block,"room_no":room_no,"addr_deatail":addr_deatail,"key":key,"sign":sign,"timestamp":timestamp},
+							success:function(data){
+								console.log(data);
+								console.log(user_id+","+phone+","+user_name+","+sex+","+addr_type+","+province+","+city+","+district+","+nbh_id+","+block+","+room_no+","+addr_deatail);
+								if(data.status==1){
+									mui.toast(data.data);
+									setInterval(function(){
+										if(parseUrl().type==0){
+									 		window.location.href="address.html";
+								 		}else if(parseUrl().type==2){
+									 		window.location.href="address-c.html";
+								 		}else{
+									 		window.location.href="positioning.html";
+								 		}
+									},1500)
+									
+								}else{
+									mui.toast(data.data);
+								}
+							},error:function(e){
+								console.log(e);
+							}
+						});
+				 		
+	
+				 	}
+				}
+				
+			 	
+
+			 })
+			 $('.mui-poppicker-btn-ok').click(function(){
+				$(".mui-poppicker").removeClass("mui-active");
+			})
+		</script>
+	</body>
+</html>

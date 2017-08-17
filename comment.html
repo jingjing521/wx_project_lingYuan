@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>商家名称</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		 <link rel="stylesheet" type="text/css" href="css/weui.css"/>
+		 <link rel="stylesheet" type="text/css" href="css/weui2.css"/>
+		 <link rel="stylesheet" type="text/css" href="css/main.css"/>
+		 <style>
+		 	.weui_uploader_input_wrp {background: url(imgs/31.png) center center no-repeat;border: none;background-size: cover;}
+		 	.weui_uploader_status:before{background: transparent;}
+		 	.weui_uploader_status .weui_uploader_status_content {
+			    position: absolute;
+			    top: -5px;
+			    right: 0px;
+			    -webkit-transform: translate(-5px, 0px);
+			    transform: translate(-5px, 0px);
+			    color: #fff;
+			}
+			.weui_uploader_status:before {
+			    content: " ";
+			    position: absolute;
+			    top: 0;
+			    right: 0;
+			    bottom: 0;
+			    left: 0;
+			    background-color: rgba(0, 0, 0, 0) !important;
+			}
+			.weui_icon_cancel{position: absolute; right: -12px; top: -5px;} 
+			.weui_uploader_bd{overflow: inherit;}
+		 </style>
+	</head>
+	<body style="background: #FFFFFF;">
+		<div id="comment">
+			<!--<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">商家名称</h1>
+			</header>-->
+			<div class="mui-content">
+				<div class="comn">
+					<h3>总体</h3>
+					<div class="starts weui-rater">
+			 	   		<a data-num="1" class="weui-rater-box"> 
+			 	   			<span class="weui-rater-inner"><img src="images/stars.png" alt=""></span>
+			 	   		</a>
+			 	   		<a data-num="2" class="weui-rater-box"> 
+			 	   			<span class="weui-rater-inner"><img src="images/stars.png" alt=""></span>
+			 	   		</a>
+			 	   		<a data-num="3" class="weui-rater-box"> 
+			 	   			<span class="weui-rater-inner"><img src="images/stars.png" alt=""></span>
+			 	   		</a>
+			 	   		<a data-num="4" class="weui-rater-box"> 
+			 	   			<span class="weui-rater-inner"><img src="images/stars.png" alt=""></span>
+			 	   		</a>
+			 	   		<a data-num="5" class="weui-rater-box"> 
+			 	   			<span class="weui-rater-inner"><img src="images/stars.png" alt=""></span>
+			 	   		</a>
+			 	   	</div>
+					<h3>评价</h3>
+ 
+					<textarea name="" rows="" cols="" placeholder="亲，对商家的服务，环境满意有什么意见么?" class="content"></textarea>
+					<h3>上传照片</h3> 
+	                <div class="weui_uploader_bd">
+	                    <ul class="weui_uploader_files" id='img2'>
+	                    </ul>
+	                    <div class="weui_uploader_input_wrp" id="file2">
+	                        <input class="weui_uploader_input" type="file" accept="image/*"  id='headimgurl2' multiple capture="camera"/>
+	                    </div>
+	                </div>	 
+				</div>
+				<div class="btn btn1">发表</div>
+			</div>	 
+		</div>
+		<script src="js/zepto.min.js"></script>
+    	<script src="js/lrz.min.js"></script>
+    	<script src="js/mui.min.js"></script>
+    	<script src="js/md5.js"></script>
+    	<script src="js/index.js"></script>
+		<script type="text/javascript" charset="utf-8">
+		var arr = ["1分","2分","3分","4分","5分"];
+	    var num = -1;
+	    $(".weui-rater a").mouseover(function(){
+	        var thisL = $(this).index();
+	        for(var i = 0;i < thisL;i++){
+	            $(".weui-rater a").eq(i).addClass('checked');
+	            $(".weui-rater a").eq(i+1).find('img').attr('src','images/star.png');
+	        }
+	        for(var i = thisL; i < 5;i++){
+	            $(".weui-rater a").eq(i).removeClass('checked');
+	            $(".weui-rater a").eq(i+1).find('img').attr('src','images/stars.png')
+	        }
+	        $(this).addClass('checked');
+	    })
+	    $(".weui-rater a").mouseout(function(){
+	        var thisL = $(this).index();
+
+	        // for(var i = thisL; i < 5;i++){
+	        //     $(".weui-rater a").eq(i).removeClass('checked');
+	        //     $(".weui-rater a").eq(i+1).find('img').attr('src','images/stars.png')
+	        // }
+	    })
+	    $(".weui-rater").mouseout(function(){
+	        for(var i = 0; i < num;i++){
+	            $(".weui-rater a").eq(i).addClass('checked');
+	            $(".weui-rater a").eq(i+1).find('img').attr('src','images/star.png')
+	        }
+	    })
+	    $(".weui-rater a").click(function(){
+	        var thisL = $(this).index();
+	        $("#fen").html(arr[thisL]);
+	        $(this).addClass('checked');
+	        $(".weui-rater a").eq(i).find('img').attr('src','images/star.png');
+	        num = thisL;
+	    });
+	    function delImg(r){
+		    var delimg=$(r);
+		    $.confirm('您确定要删除吗?', '确认删除?', function() {
+		    	delimg.remove();
+		    	if($('#img2').find('li').length>6){
+	            	$('#file2').css('display','none');
+	            }else{
+	            	$('#file2').css('display','block');
+	            }
+		    },function(){$.toast('取消操作', 'cancel');});
+		   
+		}
+	    //上传图片
+	    $(function(){
+		    var f2 = document.querySelector('#headimgurl2');
+		    f2.onchange = function (e) {
+		        var files = e.target.files;
+		        var len = files.length;
+		        for (var i=0; i < len; i++) {
+		            lrz(files[i],{width:640,fieldName:"file1"}).then(function (rst) {
+		                    var xhr = new XMLHttpRequest();
+		                    xhr.open('POST', 'http://lingplus.hangtuosoft.com/index.php/asset/asset/swfupload');
+		                    xhr.onload = function () {
+		                        if (xhr.status === 200) {
+			                        var obj = eval('(' + xhr.responseText + ')');
+			                        console.log(obj.url);
+			                        $('#img2').append('<li onclick="console.log(1);delImg(this)" class="weui_uploader_file weui_uploader_status" style="background-image:url('+obj.url+')" data-img="'+obj.url+'"><div class="weui_uploader_status_content"><i class="weui_icon_cancel"></i></div></li>'); 
+			                        $('#file2').append('<input value="'+obj.url+'"  type="hidden"  name="files" />');
+			                        if($('#img2').find('li').length>=6){
+			                        	$('#file2').css('display','none');
+			                        }else{
+			                        	$('#file2').css('display','block');
+			                        }
+		                        } else {
+		                            // 处理其他情况
+		                        }
+		                    };
+		                    xhr.onerror = function () {
+		                        // 处理错误
+		                    };
+		                    xhr.upload.onprogress = function (e) {
+		                        // 上传进度
+		                        var percentComplete = ((e.loaded / e.total) || 0) * 100;
+		                    };
+		                    // 添加参数
+		                    rst.formData.append('size', rst.fileLen);
+		                    rst.formData.append('base64', rst.base64);
+		                    // 触发上传
+		                    xhr.send(rst.formData);
+		                    return rst;
+		                })
+		                .catch(function (err) {
+		                    alert(err);
+		                })
+		                .always(function () {// 不管是成功失败，这里都会执行
+		                });
+		
+		        }//for end
+		    }
+		});
+		/*发布店铺评论接口 shopDoComment
+		shop_id	Int	店铺id	Y	
+		user_id	Int	用户id	Y	
+		star_level	Int	星级	Y	
+		content	string	内容	N	
+		img1	File	图片	N	
+		Img2	File	图片	N	
+		Img3	File	图片	N	
+		Img4	File	图片	N	
+		Img5	File	图片	N	
+		Img6	File	图片	N	
+		page	Int	页数	Y	
+		key	String	秘钥key	Y	
+		timestamp	Int(11)	时间戳	Y	
+		sign	String	签名	Y	*/
+		var user_id= localStorage.getItem('user_id');
+		var shop_id=parseUrl().shop_id;
+		var img1="";
+		var img2="";
+		var img3="";
+		var img4="";
+		var img5="";
+		var img6="";
+		var star_level="";
+		var content="";
+		var fromtype="wx";
+		function shopDoComment(){
+			var timestamp = Date.parse(new Date());
+		  	var values=['timestamp','fromtype','shop_id','user_id','star_level','content'];
+		  	var data={'timestamp':timestamp,'fromtype':fromtype,'shop_id':shop_id,'user_id':user_id,'star_level':star_level,'content':content};
+		  	var sign = doSign(values,data);
+		  	console.log(shop_id);
+		  	console.log(user_id);
+		  	console.log(star_level);
+		  	console.log(content);
+			console.log(img1);
+			console.log(img2);
+			console.log(img3);
+			console.log(img4);
+			console.log(img5);
+			console.log(img6);
+		  	$.ajax({
+		        type : "post",
+		        url : url+'shopDoComment', 
+		        data:{'timestamp':timestamp,'fromtype':fromtype,'shop_id':shop_id,'key':key,'sign':sign,'user_id':user_id,'star_level':star_level,'content':content,'img1':img1,'img2':img2,'img3':img3,'img4':img4,'img5':img5,'img6':img6}, 
+		        dataType : "json",
+		        success : function(data){
+		        	console.log(data);
+		        	if(data.status==1){
+		        		 mui.toast("评价成功！");
+		        		 setInterval(function(){
+		        		 	window.location.href="store.html?shop_id="+shop_id;
+		        		 },1500)
+		        	}
+		        }  
+		    })
+		}
+		$('.btn1').on('click',function(){
+			img1=$('#img2 li').eq(0).attr('data-img') || "";
+			img2=$('#img2 li').eq(1).attr('data-img') || "";
+			img3=$('#img2 li').eq(2).attr('data-img') || "";
+			img4=$('#img2 li').eq(3).attr('data-img') || "";
+			img5=$('#img2 li').eq(4).attr('data-img') || "";
+			img6=$('#img2 li').eq(5).attr('data-img') || "";
+			star_level=$(".checked").length;
+			content=$('.content').val();
+			if(star_level == 0){
+				alert('请进行星级评价！');
+			}else{
+				shopDoComment();
+			}
+		})
+		</script>
+	 </body>
+</html>

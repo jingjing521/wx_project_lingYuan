@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+   		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>意见反馈</title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body style="background: #fff;">
+		<div id="feedback">
+			<!--<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">意见反馈</h1>
+			</header>-->
+			<div class="mui-content" style="background: #fff;">
+				<div class="feedback-con">
+					<div class="feedback-con-item">
+						<div class="feedback-con-item-title">反馈内容<span>*</span></div>
+						<div><textarea placeholder="字数不超过100个字" class="feedback-con-item-text"></textarea></div>
+					</div>
+					<div class="feedback-con-item">
+						<div class="feedback-con-item-title">联系方式</div>
+						<div class="feedback-con-item-input"><input class="phone" type="text" placeholder="请输入您的联系方式"></div>
+					</div>
+
+				</div>
+				<div class="btn">提交</div>
+				
+			</div>
+		</div>
+		<script type="text/javascript" src="js/mui.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-2.2.1.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/md5.js" ></script>
+		<script>
+			$(".btn").click(function(){
+				var tel=$(".phone").val();
+				var val=$(".feedback-con-item-text").val();
+				if(val==''){
+					mui.toast("请输入反馈内容！")
+				}else{
+					window.location.href="set.html";
+				}
+			})
+		</script>
+	</body>
+</html>

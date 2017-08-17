@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+   		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的优惠券</title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<style>
+			.coupons-b-item-btn{cursor: pointer;}
+		</style>
+	</head>
+	<body style="background: #f0f0f0;">
+		<div id="coupons">
+			<!--<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">我的优惠券</h1>
+			</header>-->
+			<div class="mui-content" style="background: #f0f0f0;">
+			   <div class="coupons-t">
+			   		<a href="coupons.html"><div class="coupons-t-item fl">
+			   			<div>全部<img src="images/bottom.png" /></div>
+			   		</div></a>
+			   		<a href="coupons-used.html"><div class="coupons-t-item fl">
+			   			<div>已使用<img src="images/bottom.png" /></div>
+			   		</div></a>
+			   		<a href="coupons-no.html"><div class="coupons-t-item fl">
+			   			<div>未使用<img src="images/bottom.png" /></div>
+			   		</div></a>
+			   		<a href="coupons-overdue.html"><div class="coupons-t-item fl coupons-t-item-active">
+			   			<div>已过期<img src="images/bottom1.png" /></div>
+			   			<div class="lines"></div>
+			   			<div class="lines"></div>
+			   		</div></a>
+			   </div>
+			   <div class="coupons-b">
+		   			<div class="coupons-b-item">
+		   				<div class="coupons-b-item-shop">
+		   					<a href="store.html" style="color: #000;" >
+		   						<div class="fl coupons-b-xx">
+		   							<div class="fl"><img src="images/logo.png"></div>韩都衣舍
+		   						</div>
+		   					</a>
+		   					<div class="fr coupons-b-zt" style=" color: #999;">已过期</div>
+		   					<div class="clear"></div>
+		   				</div>
+		   				<div class="coupons-b-item-con">
+		   					<a href="coupons-con2.html" style="color: #000;">
+		   						<div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div>
+		   						<div class="fl coupons-b-item-con-xx">
+		   							<div class=" coupons-b-item-con-name">100元</div>
+		   							<div class=" coupons-b-item-con-title">全场通用</div>
+		   							<div class=" coupons-b-item-con-data">2017.03.18-2017.05.18</div>
+		   						</div>
+		   					</a>
+		   					<div class="clear"></div>
+		   				</div>
+		   			</div>
+		   			<div class="coupons-b-item">
+			   				<div class="coupons-b-item-shop">
+			   					<a href="store.html" style="color: #000;" >
+			   						<div class="fl coupons-b-xx">
+			   							<div class="fl"><img src="images/logo.png"></div>韩都衣舍
+			   						</div>
+			   					</a>
+			   					<div class="fr coupons-b-zt" style=" color: #999;">已过期</div>
+			   					<div class="clear"></div>
+			   				</div>
+			   				<div class="coupons-b-item-con">
+			   					<a href="coupons-con2.html" style="color: #000;">
+			   						<div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div>
+			   						<div class="fl coupons-b-item-con-xx">
+			   							<div class=" coupons-b-item-con-name">100元</div>
+			   							<div class=" coupons-b-item-con-title">全场通用</div>
+			   							<div class=" coupons-b-item-con-data">2017.03.18-2017.05.18</div>
+			   						</div>
+			   					</a>
+			   					<div class="clear"></div>
+			   				</div>
+		   			</div>
+		   			<div class="coupons-b-item">
+		   				<div class="coupons-b-item-shop">
+		   					<a href="store.html" style="color: #000;" >
+		   						<div class="fl coupons-b-xx">
+		   							<div class="fl"><img src="images/logo.png"></div>韩都衣舍
+		   						</div>
+		   					</a>
+		   					<div class="fr coupons-b-zt" style=" color: #999;">已过期</div>
+		   					<div class="clear"></div>
+		   				</div>
+		   				<div class="coupons-b-item-con">
+		   					<a href="coupons-con2.html" style="color: #000;">
+		   						<div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div>
+		   						<div class="fl coupons-b-item-con-xx">
+		   							<div class=" coupons-b-item-con-name">100元</div>
+		   							<div class=" coupons-b-item-con-title">全场通用</div>
+		   							<div class=" coupons-b-item-con-data">2017.03.18-2017.05.18</div>
+		   						</div>
+		   					</a>
+		   					<div class="clear"></div>
+		   				</div>
+		   			</div>
+		   			<div class="coupons-b-item">
+		   				<div class="coupons-b-item-shop">
+		   					<a href="store.html" style="color: #000;" >
+		   						<div class="fl coupons-b-xx">
+		   							<div class="fl"><img src="images/logo.png"></div>韩都衣舍
+		   						</div>
+		   					</a>
+		   					<div class="fr coupons-b-zt" style=" color: #999;">已过期</div>
+		   					<div class="clear"></div>
+		   				</div>
+		   				<div class="coupons-b-item-con">
+		   					<a href="coupons-con2.html" style="color: #000;">
+		   						<div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div>
+		   						<div class="fl coupons-b-item-con-xx">
+		   							<div class=" coupons-b-item-con-name">100元</div>
+		   							<div class=" coupons-b-item-con-title">全场通用</div>
+		   							<div class=" coupons-b-item-con-data">2017.03.18-2017.05.18</div>
+		   						</div>
+		   					</a>
+		   					<div class="clear"></div>
+		   				</div>
+		   			</div>
+			   </div>
+			   <div class="erweima" style="display: none;">
+			   		<div id="qrcode2"></div>
+			   		<img src="images/ewm.png" />
+			   </div>
+			</div>
+			
+		</div>
+		<div id="overlay"></div>
+		<script type="text/javascript" src="js/mui.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-2.2.1.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/md5.js" ></script>
+		<script type="text/javascript" src="js/qrcode.min.js" ></script>
+		<script>
+//			用户优惠券列表接口
+//			接口名
+//			bonusListByUser
+//			
+//			说明
+//			参数
+//			参数	类型	说明	是否必须	取值范围
+//			user_id	int	用户id	Y	
+//			type	int	类型	Y	1全部2已使用3未使用4已过期
+//			page	int	页数	N	
+//			key	String	秘钥key	Y	
+//			timestamp	Int(11)	时间戳	Y	
+//			sign	String	签名	Y	
+			var key="idf5nsi5t0qbemwo12hztbftm53tbv6pht";
+			var page=1;
+			var user_id=localStorage.getItem("user_id");
+			var type=1;
+			 indexData();
+			function indexData(){
+				var timestamp =Date.parse(new Date());
+				var value=["user_id","type","page","timestamp"];
+				var data = {"user_id":user_id,"type":type,"page":page,"timestamp": timestamp};
+				var sign=doSign(value,data);
+				$.post(link_url + "bonusListByUser", {
+					"user_id":user_id,
+					"page": page,
+					"type":type,
+					"key": key,
+					"timestamp": timestamp,
+					"sign": sign
+				}, function(data) {
+					var sceniclist = "";
+					var products = "";
+					if(data.status == 1) {
+						console.log(data);
+						var str = JSON.stringify(data.data.resultData);
+						sessionStorage.pline = str;
+						$.each(data.data, function(i,v) {
+							console.log(v.end_time);
+										console.log(timestamp/1000);
+							if(v.status==0){//未使用
+								if(v.bonus_type==1){//优惠券
+									if(v.end_time<timestamp/1000){//过期
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</a><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}else{
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}
+								}else if(v.bonus_type==2){//折扣券
+									if(v.end_time<timestamp/1000){//过期
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}else{
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}
+								}else if(v.bonus_type==3){//满减卷
+									if(v.end_time<timestamp/1000){//过期
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}else{
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+
+									}
+								}else if(v.bonus_type==3){//代金券
+									if(v.end_time<timestamp/1000){//过期
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}else{
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}
+								}
+							}else if(v.status==1){//已使用
+								if(v.is_comment==0){//去评价
+									if(v.bonus_type==1){//优惠券
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;"><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}else if(v.bonus_type==2){//折扣券
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}else if(v.bonus_type==3){//满减卷
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{	
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;"><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}	
+									}else if(v.bonus_type==3){//代金券
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{	
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;"><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}
+								}else{//已评价
+									if(v.bonus_type==1){//优惠券
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{		
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;"><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}	
+									}else if(v.bonus_type==2){//折扣券
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{		
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}	
+									}else if(v.bonus_type==3){//满减卷
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{		
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;"><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}	
+									}else if(v.bonus_type==3){//代金券
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{		
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}	
+									}
+								}
+							}
+							
+							
+						});
+					}
+				}, "json").error(function(xhr, errorText, errorType) {
+					msg('网络错误，请稍后再试', 'text');
+				});
+			}
+			//加载更多
+			var totalheight = 0;     //定义一个总的高度变量
+			function loaata(){ 
+			    totalheight = parseInt($(window).height()) + parseInt($(window).scrollTop())+1;     //浏览器的高度加上滚动条的高度 
+//				console.log(totalheight);
+			    if ($(document).height() <= totalheight){ //当文档的高度小于或者等于总的高度的时候，开始动态加载数据 
+			        //加载数据
+			        page++;
+					var timestamp =Date.parse(new Date());
+					var value=["user_id","type","page","timestamp"];
+					var data = {"user_id":user_id,"type":type,"page":page,"timestamp": timestamp};
+					var sign=doSign(value,data);
+					$.post(link_url + "bonusListByUser", {
+						"user_id":user_id,
+						"page": page,
+						"type":type,
+						"key": key,
+						"timestamp": timestamp,
+						"sign": sign
+					}, function(data) {
+						var sceniclist = "";
+						var products = "";
+						if(data.status == 1) {
+							console.log(data);
+							var str = JSON.stringify(data.data.resultData);
+							sessionStorage.pline = str;
+							$.each(data.data, function(i,v) {
+							
+							if(v.status==0){//未使用
+								if(v.bonus_type==1){//优惠券
+									if(v.end_time<timestamp/1000){//过期
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</a><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}else{
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}
+								}else if(v.bonus_type==2){//折扣券
+									if(v.end_time<timestamp/1000){//过期
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}else{
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}
+								}else if(v.bonus_type==3){//满减卷
+									if(v.end_time<timestamp/1000){//过期
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}else{
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+
+									}
+								}else if(v.bonus_type==3){//代金券
+									if(v.end_time<timestamp/1000){//过期
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style=" color: #999;">已过期</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con2.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}else{
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt">未使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btn" card_id="'+v.card_id+'" bonus_sn="'+v.bonus_sn+'">立即使用</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}
+								}
+							}else if(v.status==1){//已使用
+								if(v.is_comment==0){//去评价
+									if(v.bonus_type==1){//优惠券
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;"><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}else if(v.bonus_type==2){//折扣券
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}else if(v.bonus_type==3){//满减卷
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{	
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;"><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}	
+									}else if(v.bonus_type==3){//代金券
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{	
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;"><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><a href="store.html?shop_id='+v.shop_id+'"><div class="fl coupons-b-item-btns">去评论</div></a><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}
+									}
+								}else{//已评价
+									if(v.bonus_type==1){//优惠券
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{		
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;"><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/hui.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}	
+									}else if(v.bonus_type==2){//折扣券
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{		
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/zhe.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'折</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}	
+									}else if(v.bonus_type==3){//满减卷
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{		
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;"><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/jian.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}	
+									}else if(v.bonus_type==3){//代金券
+										if(v.shop_id==0){
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><div class="fl coupons-b-xx"><div class="fl"><img src="images/logo.png"></div>'+v.shop_info.shop_name+'</div><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}else{		
+											$('<div class="coupons-b-item"><div class="coupons-b-item-shop"><a href="store.html?shop_id='+v.shop_id+'" style="color: #000;" ><div class="fl coupons-b-xx"><div class="fl"><img src="'+v.shop_info.shop_logo+'"></div>'+v.shop_info.shop_name+'</div></a><div class="fr coupons-b-zt" style="color: #333;">已使用</div><div class="clear"></div></div><div class="coupons-b-item-con"><a href="coupons-con1.html?card_id='+v.card_id+'" style="color: #000;"><div class="fl coupons-b-item-con-img"><img src="images/quan1.png"></div><div class="fl coupons-b-item-con-xx"><div class=" coupons-b-item-con-name">'+v.bonus_amount+'元</div><div class=" coupons-b-item-con-title">'+v.bonus_desc+'</div><div class=" coupons-b-item-con-data">'+v.start_time_format+'-'+v.end_time_format+'</div></div></a><div class="fl coupons-b-item-btns1">已评价</div><div class="clear"></div></div></div>').appendTo($(".coupons-b"));
+										}	
+									}
+								}
+							}
+							
+							
+						});
+						}
+					}, "json").error(function(xhr, errorText, errorType) {
+						msg('网络错误，请稍后再试', 'text');
+					});
+				}
+			} 
+			
+			$(window).scroll( function() { 
+//			    console.log("滚动条到顶部的垂直高度: "+$(document).scrollTop()); 
+//			    console.log("页面的文档高度 ："+$(document).height());
+//			    console.log('浏览器的高度：'+$(window).height());
+			    loaata();
+			});
+			$(document).on("click",".coupons-b-item-btn",function(){
+				var card_id=$(this).attr("card_id")
+				var bonus_sn=$(this).attr("bonus_sn");
+				$('#overlay').css('display','block');
+		   		var docHeight = $(document).height(); //获取窗口高度  
+	
+		        $('#overlay')  
+				    .height(docHeight)  
+				    .css({  
+				      'opacity': .5, //透明度  
+				      'position': 'absolute',  
+				      'top': 0,  
+				      'left': 0,  
+				      'background-color': 'black',  
+				      'width': '100%',  
+				      'z-index': 99 //保证这个悬浮层位于其它内容之上  
+				 });  
+				$(".erweima").show();
+				$('#overlay').click(function(){
+					$(".erweima").hide();
+					$('#overlay').css('display','none');
+				})
+				$("#qrcode2").empty();
+				 var qrcode = new QRCode(document.getElementById("qrcode2"), {
+			        width : 100,
+			        height : 100
+			      });
+			      function makeCode () {
+			        qrcode.makeCode(bonus_sn+"&"+card_id);
+			      }
+			      makeCode();
+				
+			})
+			
+		</script>
+	</body>
+</html>

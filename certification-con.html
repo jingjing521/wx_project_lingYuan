@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+   		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>户主身份</title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/weui.min.css" />
+		<link rel="stylesheet" href="css/weui2.css" />
+		<link rel="stylesheet" href="css/jquery-weui.css" />
+		<style>
+	    .removeBtn{position: absolute; top: 0; right: 0; z-index: 11; border: 0px; border-radius: 50px; background: red; width: 22px; height: 22px; color: white;}
+	    .shadeImg{position: absolute;
+	                display: none;
+	                width: 100%;
+	                height: 100%;
+	                top: 0;
+	                left: 0;
+	                z-index: 15;
+	                text-align: center;
+	                background: rgba(0, 0, 0, 0.55);}
+	    .showImg{width: 400px; height: 500px; margin-top: 140px;}
+	    .weui_uploader_status .weui_uploader_status_content {
+		    position: absolute;
+		    top: -5px;
+		    right: 0px;
+		    -webkit-transform: translate(-5px, 0px);
+		    transform: translate(-5px, 0px);
+		    color: #fff;
+		}
+		.weui_uploader_status:before {
+		    content: " ";
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    bottom: 0;
+		    left: 0;
+		    background-color: rgba(0, 0, 0, 0) !important;
+		}
+		.weui_icon_cancel{position: absolute; right: -12px; top: -5px;} 
+		.mui-toast-message{width: 230px;}
+	    </style>
+	</head>
+	<body style="background: #fff;">
+		<div id="certification">
+			<!--<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">户主身份</h1>
+			</header>-->
+			<div class="mui-content" style="background: #fff;">
+				<!--<div class="weui_cells weui_cells_form" style="margin-top: 0px;">
+     
+				    <div class="weui_cell">
+				        <div class="weui_cell_bd weui_cell_primary">
+				            <div class="weui_uploader">
+				                <div class="weui_uploader_hd weui_cell">
+				                    <div class="weui_cell_bd weui_cell_primary">身份证正面照片</div>
+				                    <div class="weui_cell_ft"></div>
+				                </div>
+				                <div class="weui_uploader_bd" style="position: relative;">
+				                    <ul class="weui_uploader_files" id='img2'>
+				                    </ul>
+				                    <div class="weui_uploader_input_wrp" id="file2" style="border-radius: 8px;">
+				                        <input class="weui_uploader_input" type="file" capture="camera" accept="image/jpg,image/jpeg,image/png,image/gif"  id='headimgurl2' multiple />
+				                        
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				    
+				</div>  
+				<div class="weui_cells weui_cells_form" style="margin-top: 0px;">
+     
+				    <div class="weui_cell">
+				        <div class="weui_cell_bd weui_cell_primary">
+				            <div class="weui_uploader">
+				                <div class="weui_uploader_hd weui_cell">
+				                    <div class="weui_cell_bd weui_cell_primary">身份证反面照片</div>
+				                    <div class="weui_cell_ft"></div>
+				                </div>
+				                <div class="weui_uploader_bd" style="position: relative;">
+				                    <ul class="weui_uploader_files" id='img3'>
+				                    </ul>
+				                    <div class="weui_uploader_input_wrp" id="file3" style="border-radius: 8px; ">
+				                        <input class="weui_uploader_input" type="file" capture="camera" accept="image/jpg,image/jpeg,image/png,image/gif"  id='headimgurl3' multiple />
+				                        
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				    
+				</div>  
+				<div class="weui_cells weui_cells_form" style="margin-top: 0px;">
+     
+				    <div class="weui_cell">
+				        <div class="weui_cell_bd weui_cell_primary">
+				            <div class="weui_uploader">
+				                <div class="weui_uploader_hd weui_cell">
+				                    <div class="weui_cell_bd weui_cell_primary">房产证照片</div>
+				                    <div class="weui_cell_ft"></div>
+				                </div>
+				                <div class="weui_uploader_bd" style="position: relative;">
+				                    <ul class="weui_uploader_files" id='img4'>
+				                    </ul>
+				                    <div class="weui_uploader_input_wrp" id="file4" style="border-radius: 8px; ">
+				                        <input class="weui_uploader_input" type="file" capture="camera" accept="image/jpg,image/jpeg,image/png,image/gif"  id='headimgurl4' multiple />
+				                        
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				    
+				</div>  -->
+				<div class="certification-con">
+					<div class="certification-title">身份证正面照片</div>
+					<div class="certification-img">
+						<div class="con4 fr" >
+							<canvas id="cvs" width="200" height="200" class="fr"></canvas>
+							<form id="forms" enctype="multipart/form-data" target="id_iframe" method="post" action="http://lingplus.hangtuosoft.com/index.php/asset/asset/swfupload">
+								<span class="btns upload"><input type="file" name="img"  multiple="multiple" capture="camera" accept="image/*" class="upload_pic" id="upload" /></span>
+								<div class="clear"></div>
+								<input type="submit" value="提交" style="display: none;">
+							</form>
+							<iframe id="id_iframe" name="id_iframe" style="display:none;"></iframe>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="certification-con">
+					<div class="certification-title">身份证反面照片</div>
+					<div class="certification-img">
+						<div class="con4 fr" >
+							<canvas id="cvs1" width="200" height="200" class="fr"></canvas>
+							<form id="forms1" enctype="multipart/form-data" target="id_iframe1" method="post" action="http://lingplus.hangtuosoft.com/index.php/asset/asset/swfupload">
+								<span class="btns upload"><input type="file" name="img"  multiple="multiple" capture="camera" accept="image/*" class="upload_pic" id="uploads" /></span>
+								<div class="clear"></div>
+								<input type="submit" value="提交" style="display: none;">
+							</form>
+							<iframe id="id_iframe1" name="id_iframe1" style="display:none;"></iframe>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="certification-con">
+					<div class="certification-title">房产证照片</div>
+					<div class="certification-img">
+						<div class="con4 fr" >
+							<canvas id="cvs2" width="200" height="200" class="fr"></canvas>
+							<form id="forms2" enctype="multipart/form-data" target="id_iframe2" method="post" action="http://lingplus.hangtuosoft.com/index.php/asset/asset/swfupload">
+								<span class="btns upload"><input type="file" name="img"  multiple="multiple" capture="camera" accept="image/*" class="upload_pic" id="uploads1" /></span>
+								<div class="clear"></div>
+								<input type="submit" value="提交" style="display: none;">
+							</form>
+							<iframe id="id_iframe2" name="id_iframe2" style="display:none;"></iframe>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="btn">提交申请</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/mui.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-2.2.1.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/md5.js" ></script>
+		<script src="js/jquery-weui.js"></script>
+		<script src="js/zepto.min.js"></script>
+		<script src="js/lrz.min.js"></script>
+		<script>
+			var input1 = document.getElementById("upload"); 
+			if(typeof FileReader==='undefined'){
+			    input1.setAttribute('disabled','disabled'); 
+			}else{ 
+			    input1.addEventListener('change',readFile,false);   
+			}	
+			function readFile(){ 
+				var file = this.files[0];//获取上传文件列表中第一个文件
+				if(!/image\/\w+/.test(file.type)){
+				//图片文件的type值为image/png或image/jpg
+					alert("文件必须为图片！");
+					return false; 
+				} 
+				// console.log(file);
+				var reader = new FileReader();//实例一个文件对象
+				reader.readAsDataURL(file);//把上传的文件转换成url
+				//当文件读取成功便可以调取上传的接口
+				
+				
+				reader.onload = function(e){ 
+					var image = new Image();
+					// 设置src属性 
+					image.src = e.target.result;
+					var max=200;
+					// 绑定load事件处理器，加载完成后执行，避免同步问题
+					image.onload = function(){ 
+						// 获取 canvas DOM 对象 
+						var canvas = document.getElementById("cvs"); 
+						var ctx = canvas.getContext("2d"); 
+						// canvas清屏 
+						ctx.clearRect(0, 0, canvas.width, canvas.height); 
+						ctx.drawImage(image, 0, 0, 200, 200);
+						// 注意，此时image没有加入到dom之中
+						$("#forms").submit();
+						
+					};  
+				}
+			};
+			var input2 = document.getElementById("uploads"); 
+			if(typeof FileReader==='undefined'){ 
+			     //result.innerHTML = "抱歉，你的浏览器不支持 FileReader"; 
+			     input2.setAttribute('disabled','disabled'); 
+			}else{ 
+			    input2.addEventListener('change',readFiles,false); 
+			}
+			function readFiles(){ 
+				var file = this.files[0];//获取上传文件列表中第一个文件
+				if(!/image\/\w+/.test(file.type)){
+				//图片文件的type值为image/png或image/jpg
+					alert("文件必须为图片！");
+					return false; 
+				} 
+				// console.log(file);
+				var reader = new FileReader();//实例一个文件对象
+				reader.readAsDataURL(file);//把上传的文件转换成url
+				//当文件读取成功便可以调取上传的接口
+				reader.onload = function(e){ 
+
+					var image = new Image();
+					// 设置src属性 
+					image.src = e.target.result;
+					var max=200;
+					// 绑定load事件处理器，加载完成后执行，避免同步问题
+					image.onload = function(){ 
+						// 获取 canvas DOM 对象 
+						var canvas = document.getElementById("cvs1"); 
+
+						var ctx = canvas.getContext("2d"); 
+						// canvas清屏 
+						ctx.clearRect(0, 0, canvas.width, canvas.height); 
+						ctx.drawImage(image, 0, 0, 200, 200);
+						// 注意，此时image没有加入到dom之中
+						$("#forms1").submit();
+						
+					};  
+				}
+			};
+			//获取上传按钮
+			var input3 = document.getElementById("uploads1"); 
+			if(typeof FileReader==='undefined'){ 
+			     //result.innerHTML = "抱歉，你的浏览器不支持 FileReader"; 
+			     input3.setAttribute('disabled','disabled'); 
+			}else{ 
+			     input3.addEventListener('change',readFiles1,false); 
+			     /*input1.addEventListener('change',function (e){
+			     	console.log(this.files);//上传的文件列表
+			     },false); */
+			}
+			function readFiles1(){ 
+				var file = this.files[0];//获取上传文件列表中第一个文件
+				if(!/image\/\w+/.test(file.type)){
+				//图片文件的type值为image/png或image/jpg
+					alert("文件必须为图片！");
+					return false; 
+				} 
+				// console.log(file);
+				var reader = new FileReader();//实例一个文件对象
+				reader.readAsDataURL(file);//把上传的文件转换成url
+				//当文件读取成功便可以调取上传的接口
+				reader.onload = function(e){ 		
+					var image = new Image();
+					// 设置src属性 
+					image.src = e.target.result;
+					var max=200;
+					// 绑定load事件处理器，加载完成后执行，避免同步问题
+					image.onload = function(){ 
+						// 获取 canvas DOM 对象 
+						var canvas = document.getElementById("cvs2"); 
+						var ctx = canvas.getContext("2d"); 
+						// canvas清屏 
+						ctx.clearRect(0, 0, canvas.width, canvas.height);
+						ctx.drawImage(image, 0, 0, 200, 200);
+						// 注意，此时image没有加入到dom之中
+						$("#forms2").submit();
+					};  
+				}
+			};	
+			$(".btn").click(function(){
+				window.location.href="certification.html";
+			})
+			
+		</script>
+	</body>
+</html>

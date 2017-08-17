@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>生活圈</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/> 
+		<style>
+		#living-circle .tit_img{width: 50px;height: 50px;border-radius: 50%;overflow: hidden;margin: 0 auto;}
+		#living-circle ul.titles li .tit_img img{width: 100%;}
+		.amap-logo,.amap-copyright{display: none !important;}
+		.mui-popup-title{background: none;color: #333;}
+		.mui-popup-inner{padding:10px;}
+		.amap-icon{border-radius: 50%;float: left;}
+		.amap-icon img{width: 100%;height: 100%;}
+		.amap-marker{top:-80px;left: -20px;}
+		.mui-popup-button {color: #FB252C;}
+		.footer-tab-label-active{color: #fda8aa;}
+		</style>
+	</head>
+	<body>
+		<div id="living-circle">
+			<!--<header class="mui-bar mui-bar-nav"> 
+				<h1 class="mui-title">生活圈</h1>
+			</header>-->
+			<div class="mui-content">
+				<ul class="titles clearfix">
+					<li><div class="tit_img"><img src="images/t1.jpg"/></div><div style="line-height:30px;">维修</div></li>
+					<li><div class="tit_img"><img src="images/t2.png"/></div><div style="line-height:30px;">丽人</div></li>
+					<li><div class="tit_img"><img src="images/t3.png"/></div><div style="line-height:30px;">休闲</div></li>
+					<li><div class="tit_img"><img src="images/t4.png"/></div><div style="line-height:30px;">娱乐</div></li>
+					<li><div class="tit_img"><img src="images/t5.png"/></div><div style="line-height:30px;">酒店</div></li>
+					<li><div class="tit_img"><img src="images/t6.png"/></div><div style="line-height:30px;">购物</div></li>
+					<li><div class="tit_img"><img src="images/t7.png"/></div><div style="line-height:30px;">电影</div></li>
+					<li><div class="tit_img"><img src="images/57.png"/></div><div style="line-height:30px;">其他</div></li>
+				</ul>
+				<div id="container" style="width:100%;">	
+				</div>
+			</div>
+			<div class="footer">
+				<a href="index.html"><div class="footer-item fl">
+			        <div class="footer-icon"><img src="images/home.png"></div>
+			        <div class="footer-tab-label">首页</div>
+			    </div></a>
+			    <a href="myFamily.html" class="myFamily"><div class="footer-item fl">
+			        <div class="footer-icon"><img src="images/jia.png"></div>
+			        <div class="footer-tab-label">我家</div>
+			    </div></a>
+			    <a href="living-circle.html"><div class="footer-item footer-active fl">
+			        <div class="footer-icon "><img src="images/quans.png"></div>
+			        <div class="footer-tab-label footer-tab-label-active">生活圈</div>
+			    </div></a>
+			    <a href="center.html"> <div class="footer-item fl">
+			        <div class="footer-icon"><img src="images/center.png"></div>
+			        <div class="footer-tab-label">我的</div>
+			    </div></a>
+			    <div class="clear"></div>
+			</div>
+		</div>
+		<div id="tip" style="width: 100%;height: 100px;display: none;"></div>
+		<div id="result"></div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-2.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://webapi.amap.com/maps?v=1.3&key=c493d7fedda324d9f3648b9b2d52212f"></script>
+		<script type="text/javascript" src="http://webapi.amap.com/demos/js/liteToolbar.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			var user_id= localStorage.getItem('user_id');
+			var address_id= localStorage.getItem('addr_id');
+			$('.titles').on('click','li',function(){
+				var title=$(this).find('div').text();
+				var cat_id=$(this).attr('cat_id');
+				if(title == "其他"){
+					title="全部"
+				}
+				window.location.href="category.html?title="+title+"&cat_id="+cat_id;
+			})
+			var lat='';
+			var lng='';
+			var page='';
+			mapObj = new AMap.Map('iCenter');
+			    mapObj.plugin('AMap.Geolocation', function () {
+			    geolocation = new AMap.Geolocation({
+			        enableHighAccuracy: true,//是否使用高精度定位，默认:true
+			        timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+			        maximumAge: 0,           //定位结果缓存0毫秒，默认：0
+			        convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
+			        showButton: true,        //显示定位按钮，默认：true
+			        buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
+			        buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+			        showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
+			        showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
+			        panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
+			        zoomToAccuracy:true      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+			    }); //
+			    mapObj.addControl(geolocation);
+			    geolocation.getCurrentPosition();
+			    AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
+			    AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
+			    });
+			    //解析定位结果
+			    function onComplete(data) {
+			        var str=['定位成功'];
+			        str.push('经度：' + data.position.getLng());
+			        str.push('纬度：' + data.position.getLat());
+			        str.push('精度：' + data.accuracy + ' 米');
+			        str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
+			        document.getElementById('tip').innerHTML = str.join('<br>');
+			        var jing = String(data.position.getLng());
+			        var wei = String(data.position.getLat());
+			        var location = jing + ","+wei;
+			        console.log(location);
+			        lat=wei;
+			        lng=jing;
+			        localStorage.setItem("jing",jing);
+			        localStorage.setItem("wei",wei);
+			        // lifeCircle();
+			    }
+			    //解析定位错误信息
+			    function onError(data) {
+			        document.getElementById('tip').innerHTML = '定位失败';
+			    };
+			    // 生活圈接口
+			    function lifeCircle(){
+					var timestamp = Date.parse(new Date());
+				  	var values=['timestamp','lat','lng','page'];
+				  	var data={'timestamp':timestamp,'lat':lat,'lng':lng,'page':page};
+				  	var sign = doSign(values,data);
+				  	$.ajax({
+				        type : "post",
+				        url : url+'lifeCircle', 
+				        data:{'timestamp':timestamp,'lat':lat,'key':key,'sign':sign,'lng':lng,'page':page}, 
+				        dataType : "json",
+				        success : function(data){
+				        	console.log(data);
+				        	if(data.status==1){
+				        		$.each(data.data.cate_list,function(i,v){
+				        			 $('<li cat_id="'+v.cat_id+'"><div class="tit_img"><img src="'+v.logo+'"/></div><div style="line-height:30px;">'+v.cat_name+'</div></li>').appendTo($('.titles'))
+				        		});
+				        		$('<li cat_id=""><div class="tit_img"><img src="imgs/57.png"/></div><div style="line-height:30px;">其他</div></li>').appendTo($('.titles'))
+//				        		var h1=$('.titles').height();
+								var h=$(document).height();
+								var mapH=h-50-90+'px';
+								$('#container').css('height',mapH);
+								console.log(mapH);
+								// //添加点标记，并使用自己的icon
+								var lnglats=[];
+								var imgs=[];
+								var shop_names=[];
+								$.each(data.data.shop_list,function(i,v){
+									var img=v.shop_logo;
+									var shop_name=v.shop_name;
+									var lat=v.lat;
+									var lng=v.lng;
+									var location=[lng,lat];
+									lnglats.push(location);
+									imgs.push(img);
+									shop_names.push(shop_name);
+								})
+								//初始化地图对象，加载地图
+								var map = new AMap.Map("container", {
+							        resizeEnable: true,
+							        zoom: 12,
+							    });
+							    var infoWindow = new AMap.InfoWindow({offset:new AMap.Pixel(0,-30)});
+							    for(var i= 0,marker;i<lnglats.length;i++){
+							    	console.log(lnglats[i]);
+							        var marker=new AMap.Marker({
+							            position:lnglats[i],
+							            map:map,
+							            icon: new AMap.Icon({            
+									        size: new AMap.Size(50, 50),  //图标大小
+									        image: imgs[i],
+									    })  
+							        });
+							        marker.content=shop_names[i];
+							        marker.on('click',markerClick);
+							        marker.emit('click',{target:marker});
+							    }
+							    function markerClick(e){
+							        infoWindow.setContent(e.target.content);
+							        infoWindow.open(map, e.target.getPosition());
+						    	}
+				        	}
+				        }  
+				    })
+				};
+				var h=$(document).height();
+				var mapH=h-50-90+'px';
+				$('#container').css('height',mapH);
+				console.log(mapH);
+				// //添加点标记，并使用自己的icon
+				var lnglats=["108.925901,34.234942","108.924421,34.234197","108.928133,34.233451"];
+				var imgs=["images/10.png","images/1.jpg","images/10.png"];
+				var shop_names=["韩都衣舍","韩都衣舍","韩都衣舍"];
+				// $.each(data.data.shop_list,function(i,v){
+				// 	var img=v.shop_logo;
+				// 	var shop_name=v.shop_name;
+				// 	var lat=v.lat;
+				// 	var lng=v.lng;
+				// 	var location=[lng,lat];
+				// 	lnglats.push(location);
+				// 	imgs.push(img);
+				// 	shop_names.push(shop_name);
+				// })
+				//初始化地图对象，加载地图
+				var map = new AMap.Map("container", {
+			        resizeEnable: true,
+			        zoom: 12,
+			    });
+			    var infoWindow = new AMap.InfoWindow({offset:new AMap.Pixel(0,-30)});
+			    for(var i= 0,marker;i<lnglats.length;i++){
+			    	console.log(lnglats[i]);
+			        var marker=new AMap.Marker({
+			            position:lnglats[i],
+			            map:map,
+			            icon: new AMap.Icon({            
+					        size: new AMap.Size(50, 50),  //图标大小
+					        image: imgs[i],
+					    })  
+			        });
+			        marker.content=shop_names[i];
+			        marker.on('click',markerClick);
+			        marker.emit('click',{target:marker});
+			    }
+			    function markerClick(e){
+			        infoWindow.setContent(e.target.content);
+			        infoWindow.open(map, e.target.getPosition());
+		    	}
+		</script>
+		<script type="text/javascript" src="http://webapi.amap.com/demos/js/liteToolbar.js"></script>
+	 </body>
+</html>

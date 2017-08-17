@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+   		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>选择地址</title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<!--定位-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+	</head>
+	<body style="background: #f0f0f0;">
+		<div id="positioning">
+			<!--<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">选择地址</h1>
+			</header>-->
+			<div class="mui-content" style="background: #f0f0f0;">
+				<div class="positioning-search">
+					<div class="positioning-search-l fl ui-alert" id="cityResults"><span id="cityResult">西安市</span><img src="images/bottom.png"></div>
+					<div class="positioning-search-r fr"><img src="images/hsearch.png"><input type="text" id="input_id" class="search3" placeholder="查找街道/小区/大厦等"></div>
+					<div class="clear"></div>
+				</div>
+				<div class="content1">
+					<div class="positioning-dq">
+						<div class="positioning-dq-con"><div class="fl"><img src="images/haddr.png"></div>定位到当前地址</div>
+					</div>
+					<div class="positioning-history">
+						<div class="positioning-history-title">我的历史定位地址</div>
+						<div class="positioning-history-b">
+							<div class="positioning-history-item">
+								<div class="positioning-history-item-addr">
+									<div class="fl positioning-history-item-addr-img"><img src="images/tjia.png"></div>	
+									<div class="fl positioning-history-item-addr-xx">科兰公寓 广记路838号</div>
+									<div class="clear"></div>
+								</div>
+								<div class="positioning-history-item-xinxi">
+									<div class="fl positioning-history-item-name">严艳 <span class="positioning-history-item-sex">女</span></div>
+									<div class="fl positioning-history-item-phone">15021457896</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="positioning-history-item">
+								<div class="positioning-history-item-addr">
+									<div class="fl positioning-history-item-addr-img"><img src="images/si.png"></div>	
+									<div class="fl positioning-history-item-addr-xx">上海科匠信息科技有限公司 广记路838号</div>
+									<div class="clear"></div>
+								</div>
+								<div class="positioning-history-item-xinxi">
+									<div class="fl positioning-history-item-name">严艳 <span class="positioning-history-item-sex">女</span></div>
+									<div class="fl positioning-history-item-phone">15021457896</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="positioning-history" style="margin-bottom: 80px;">
+						<div class="positioning-history-title">附近地址</div>
+						<div class="positioning-history-b nearly">
+						<a href="index.html" style="color: #000;"><div class="positioning-addr">成都呱串串(长安西路店)</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">老北京铜锅涮肉(长丰园店)</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">呼伦沁京制铜锅涮肉</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">思彤驴蹄子面(长安西路旗舰店)</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">清盛斋牛羊肉泡馍馆(长安西路店)</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">皇家欧麦烘焙坊(长安西路)</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">李想大虾(长安西路店)</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">小马锅贴(西三爻店)</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">德叔茶餐厅</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">亭院小厨(朱雀大街店)</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">马王爷清真开锅羊肉</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">哈串串(长丰园店)</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">御品轩(华城国际店)</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">首尔名家</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">墟·巷里川渝火锅</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">马骥家泡馍烧烤(西三爻店)</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">老潼关肉夹馍(长丰园店)</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">子午路张记肉夹馍(长安西路)</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">骆家老碗面</div></a><a href="index.html" style="color: #000;"><div class="positioning-addr">王府臻品火锅(东仪路店)</div></a></div>
+					</div>
+					<a href="address-add.html"><div class="bnt-a">
+						<div class="btn">新建地址</div>
+					</div></a>
+					
+				</div>
+				<div class="content2" style="display: none;">
+				</div>
+			</div>
+		</div>
+		<div id="tip" style="display: none;"></div>
+		<script type="text/javascript" src="js/mui.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-2.2.1.js" ></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script src="js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		 <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=c493d7fedda324d9f3648b9b2d52212f&plugin=AMap.Geocoder"></script>		
+
+		<script>
+			$(".btn").click(function(){
+				window.location.href="address-add.html?type=1";
+			});
+
+			function placeSearch(city,val,jing,wei) {
+		        var placeSearch;
+		        AMap.service(["AMap.PlaceSearch"], function() {
+		            placeSearch = new AMap.PlaceSearch({ //构造地点查询类
+		                city: city//城市
+		            });
+		            //关键字查询
+		            placeSearch.search(val, function(status, result) {
+		                if (status === 'complete' && result.info === 'OK') {
+		                   console.log(result);
+		                   $(".content2").empty();
+		                   $.each(result.poiList.pois, function(i,v) {
+			                   	var lnglat = new AMap.LngLat(jing, wei);
+	 							var distance1= lnglat.distance([v.location.lng, v.location.lat]);
+								var distance=distance1.toFixed(1);
+								$('<a href="index-wy.html" style="color: #000;"><div class="content2-item"><div class="content2-item-name">'+v.name+'<div class="fr"><img src="images/addr.png">'+distance+'km</div> <div class="clear"></div></div><div class="content2-item-addr">'+v.address+'</div></div></a>').appendTo($(".content2"));
+								// if(parseUrl().index==1){
+			     //               		$('<a href="index.html" style="color: #000;"><div class="content2-item"><div class="content2-item-name">'+v.name+'<div class="fr"><img src="images/addr.png">'+distance+'km</div> <div class="clear"></div></div><div class="content2-item-addr">'+v.address+'</div></div></a>').appendTo($(".content2"));
+			     //               	}else if(parseUrl().index==2){
+			     //               		$('<a href="index-new.html" style="color: #000;"><div class="content2-item"><div class="content2-item-name">'+v.name+'<div class="fr"><img src="images/addr.png">'+distance+'km</div> <div class="clear"></div></div><div class="content2-item-addr">'+v.address+'</div></div></a>').appendTo($(".content2"));
+			     //               	}else if(parseUrl().index==3){
+			     //               		$('<a href="index-shop.html" style="color: #000;"><div class="content2-item"><div class="content2-item-name">'+v.name+'<div class="fr"><img src="images/addr.png">'+distance+'km</div> <div class="clear"></div></div><div class="content2-item-addr">'+v.address+'</div></div></a>').appendTo($(".content2"));
+			     //               	}else if(parseUrl().index==4){
+			     //               		$('<a href="index-wy.html" style="color: #000;"><div class="content2-item"><div class="content2-item-name">'+v.name+'<div class="fr"><img src="images/addr.png">'+distance+'km</div> <div class="clear"></div></div><div class="content2-item-addr">'+v.address+'</div></div></a>').appendTo($(".content2"));
+			                   		
+			     //               	}
+			                   		
+							});
+		                }
+		            });
+		        });
+		    }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+   		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的认证</title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<style>
+			.center-b-item{ cursor: pointer;}
+			.hz{margin-top: 20px !important;}
+			#center .center-b-con {
+			    width: 40%;
+			    margin-left: 110px;
+			}
+		</style>
+	</head>
+	<body style="background: #fff;">
+		<div id="center">
+			<div class="mui-content" style="background: #fff;">
+				<div class="center-banner">
+					<img src="images/cbanner.png" class="center-banner-img">
+					<div class="center-text">
+						<!--<a href="center.html"><div style="position: absolute; left: 5%; top: 13px;"><img style="width: 10px;" src="imgs/15.png"></div></a>-->
+						<div class="center-text-title">我的认证</div>
+						<a href="address-c.html"><div class="center-text-addr">切换地址</div></a>
+					</div>
+				</div>
+				<div class="center-b" style="margin-bottom: 50px;">
+					<div class="center-b-tx">
+						<a href="personal.html"><div class="center-b-tx-img fl"><img src="images/tx1.png"></div></a>
+						<div class="fl center-b-con">
+							<div class="center-b-con-name">煌煌</div>
+							<div class="center-b-con-addr">陕西省西安市</div>
+						</div>
+						<div class="fr center-rz">
+							<div class="center-login-rz">未认证</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="center-b-item hz">
+						<div class="center-b-item-name fl">户主身份</div>
+						<div class="center-b-item-img fr" ><img src="images/hz.png"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="center-b-item qs">
+						<div class="center-b-item-name fl">亲属身份</div>
+						<div class="center-b-item-img fr"><img src="images/qs.png"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="center-b-item zk">
+						<div class="center-b-item-name fl">租客身份</div>
+						<div class="center-b-item-img fr"><img src="images/zk.png" style="margin-top: 20px;"> </div>
+						<div class="clear"></div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/mui.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-2.2.1.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/md5.js" ></script>
+		<script>
+		$(".hz").click(function(){
+			window.location.href="certification-con.html";
+		})
+		$(".qs").click(function(){
+			window.location.href="certification-con1.html";
+		})
+		$(".zk").click(function(){
+			window.location.href="certification-con2.html";
+		})
+		</script>
+	</body>
+</html>

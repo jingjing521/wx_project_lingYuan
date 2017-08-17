@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我家</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<style>
+			a{ -webkit-tap-highlight-color:rgba(255,0,0,0);}
+			.footer-tab-label-active{color: #fda8aa;}
+		</style>
+	</head>
+	<body>
+		<div id="my_family">
+			<!--<header class="mui-bar mui-bar-nav">
+				<h1 class="mui-title">我家</h1>
+			</header>-->
+			<div class="mui-content">
+				<div class="img">
+					<div class="" style=""><img src="images/10.png" class="nav_img" /></div>
+					<span id="address">
+						上海浦东星河湾
+					</span>
+				</div>
+				<ul class="opt_tit clearfix">
+					<li class="property"><img src="images/12.png"/><div>智慧社区</div></li>
+					<li class="announcement_lists"><img src="images/13.png"/><div>物业公告</div></li>
+					<li class="street_service"><img src="images/14.png"/><div>街道办事</div></li>
+				</ul>
+			</div>
+			<div class="footer">
+				 <a href="index.html"><div class="footer-item fl">
+			        <div class="footer-icon"><img src="images/home.png"></div>
+			        <div class="footer-tab-label">首页</div>
+			    </div></a>
+			     <a href="myFamily.html"><div class="footer-item  footer-active fl">
+			        <div class="footer-icon"><img src="images/jias.png"></div>
+			        <div class="footer-tab-label footer-tab-label-active
+			        ">我家</div>
+			    </div></a>
+			     <a href="living-circle.html"><div class="footer-item fl">
+			        <div class="footer-icon "><img src="images/quan.png"></div>
+			        <div class="footer-tab-label">生活圈</div>
+			    </div></a>
+			     <a href="center.html"><div class="footer-item fl">
+			        <div class="footer-icon"><img src="images/center.png"></div>
+			        <div class="footer-tab-label">我的</div>
+			    </div></a>
+			    <div class="clear"></div>
+			</div>
+		</div>
+		<script src="js/jquery-2.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/md5.js"></script>
+	    <script src="js/index.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			$('.property').on('click',function(){
+				window.location.href="property.html"
+			});
+			$('.street_service').on('click',function(){
+				window.location.href="street_service.html"
+			});
+			$('.announcement_lists').on('click',function(){
+				window.location.href="announcement_lists.html";
+			})
+		</script>
+	 </body>
+</html>

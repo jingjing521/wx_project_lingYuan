@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+   		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>用户中心</title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<style>
+		.footer-tab-label-active{color: #fda8aa;}
+		</style>
+	</head>
+	<body style="background: #fff;">
+		<div id="center">
+			<div class="mui-content" style="background: #fff;">
+				<div class="center-banner">
+					<img src="images/cbanner.png" class="center-banner-img">
+					<img src="images/xx.png" class="center-xx" />
+				</div>
+				<div class="center-b" style="margin-bottom: 50px;">
+					<div class="center-b-tx">
+						<a href="personal.html"><div class="center-b-tx-img fl"><img src="images/tx1.png"></div></a>
+						<a href="login.html"><div class="fr center-login">
+							<div class="center-login-btn">登录</div>
+						</div>
+						</a>
+						<div class="clear"></div>
+					</div>
+					<div style="height: 50px;"></div>
+					<div class="center-b-item rz" onclick="window.location.href='certification.html'">
+						<div class="center-b-item-name fl">我的认证</div>
+						<div class="center-b-item-img fr" style="width: 23px;"><img src="images/rz.png"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="center-b-item" onclick="window.location.href='coupons.html'">
+						<div class="center-b-item-name fl">我的优惠券</div>
+						<div class="center-b-item-img fr" style="width: 23px;"><img src="images/yhj.png"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="center-b-item" onclick="window.location.href='collect.html'">
+						<div class="center-b-item-name fl">我的收藏</div>
+						<div class="center-b-item-img fr"><img src="images/sc.png" style=" margin-top: 15px;"> </div>
+						<div class="clear"></div>
+					</div>
+					<div class="center-b-item" onclick="window.location.href='message.html'">
+						<div class="center-b-item-name fl">我的消息</div>
+						<div class="center-b-item-img fr"><img src="images/cxx.png" style=" margin-top: 17px;"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="center-b-item" onclick="window.location.href='equipment.html'">
+						<div class="center-b-item-name fl">我的设备</div>
+						<div class="center-b-item-img fr"><img src="images/sb.png"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="center-b-item" onclick="window.location.href='app-recommend.html'">
+						<div class="center-b-item-name fl">应用推荐</div>
+						<div class="center-b-item-img fr"><img src="images/yy.png"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="center-b-item" onclick="window.location.href='address.html'">
+						<div class="center-b-item-name fl">地址管理</div>
+						<div class="center-b-item-img fr"><img src="images/addrs.png"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="center-b-item" onclick="window.location.href='set.html'">
+						<div class="center-b-item-name fl">设置</div>
+						<div class="center-b-item-img fr"><img src="images/set.png"></div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="footer">
+				 <a href="index.html"><div class="footer-item fl" >
+			        <div class="footer-icon"><img src="images/home.png"></div>
+			        <div class="footer-tab-label">首页</div>
+			    </div></a>
+			     <a href="myFamily.html" class="myFamily"><div class="footer-item fl">
+			        <div class="footer-icon"><img src="images/jia.png"></div>
+			        <div class="footer-tab-label">我家</div>
+			    </div></a>
+			     <a href="living-circle.html"><div class="footer-item fl">
+			        <div class="footer-icon "><img src="images/quan.png"></div>
+			        <div class="footer-tab-label">生活圈</div>
+			    </div></a>
+			     <a href="center.html"> <div class="footer-item fl  footer-active" >
+			        <div class="footer-icon"><img src="images/centers.png"></div>
+			        <div class="footer-tab-label footer-tab-label-active">我的</div>
+			    </div></a>
+			    <div class="clear"></div>
+			</div>
+			
+		</div>
+		<script type="text/javascript" src="js/mui.min.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/jquery-2.2.1.js" ></script>
+		<script>
+			$(".center-xx").click(function(){
+				window.location.href="message.html";
+			})
+		</script>
+	</body>
+</html>

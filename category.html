@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>丽人</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<style type="text/css">
+			.cat_style li{text-align: center;}
+			.sort li{text-align: center;}
+			.weui-rater-inner{margin-right: 2px;}
+			#category .weui-rater-inner img {
+    			width: 12%;
+			}
+			.mui-table-view:after{height: 0}
+			.mui-table-view-cell:after{height: 0}
+		</style>
+	</head>
+	<body>
+		<div id="filter" style="display: none;">
+			<div class="filter_tit">
+				<span class="return"><img src="imgs/15.png"/></span>
+			    <span>筛选</span>
+			    <span class="aifirm">确认</span>
+			</div>
+			<p>距离</p>
+			<ul class="distant_lists clearfix julitype">
+				<li class="active" julitype="1">1000米以内</li>
+				<li julitype="2">2000米以内</li>
+				<li julitype="3">3000米以内</li>
+				<li julitype="4">大于3000米</li>
+			</ul>
+			<p>优惠券</p>
+			<ul class="distant_lists clearfix bonus_type">
+				<li class="active" bonus_type="2">有优惠券</li>
+				<li bonus_type="1">无优惠券</li>
+			</ul>
+			<div class="reset">重置</div>
+		</div>
+		<div id="category">
+			<!--<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="living-circle.html"></a>
+				<h1 class="mui-title">丽人</h1>
+			</header>-->
+			<div class="mui-content">
+				<ul class="opt_tit clearfix">
+					<li class="cat none1"><span cat_id="" id="cat_id">分类</span><img src="images/bottom.png"></li>
+					<li style="position: relative;" class="sorts  none2">
+						<span sort="1" id="sort">综合排序</span><img src="images/bottom.png">
+					</li>
+					<li class="filter"><span>筛选</span><img src="images/bottom.png"></li>
+				</ul>
+			    <div class="h10"></div>
+			    <!--分类-->
+			    <ul class="cat_style" style="display: none;z-index: 999;"></ul>
+				<!--综合排序-->				
+				<ul class="sort" style="display: none;z-index: 999;">
+					<li sort="1">综合排序</li>
+					<li sort="2">距离最近</li>
+					<li sort="3">评价最好</li>
+					<li sort="4">领取次数</li>
+				</ul>
+				<div class="weui_panel weui_panel_access">
+				    <ul class="weui_panel_bd streets mui-table-view">
+				    	<li class="mui-table-view-cell mui-media">
+				    		<a href="store.html?shop_id='+v.shop_id+'">
+				    			<img class="mui-media-object mui-pull-left" src="images/10.png" style=" width:100%;margin-top: 3.5%;">
+				    			<div class="mui-media-body">
+				    				<p class="clearfix">
+				    					<span class="fl mui-ellipsis" style="width:55%;">huhuhuhu</span>
+				    					<span class="fr">陕西/西安</span>
+				    				</p>
+				    				<p class="mui-ellipsis">店铺</p>
+				    				<p class="clearfix">
+				    					<span class="fl star">
+				    						<a data-num="1" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="2" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="3" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="4" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="5" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a>
+				    					</span>
+				    					<span class="fr distant">23km</span>
+				    				</p>
+				    			</div>
+				    		</a>
+				    	</li>
+				    </ul>
+				</div>
+			     
+			</div>
+		</div>
+		<div id="overlay"></div>
+		<span id="julitype" style="display: none;"></span>
+		<span id="bonus_type" style="display: none;"></span>
+	 
+		<!-- <script src="js/jquery-2.2.1.js" type="text/javascript" charset="utf-8"></script> -->
+		<script src="js/zepto.min.js"></script> 
+	    <script src="js/updown.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/index.js"></script>
+		<script type="text/javascript" charset="utf-8"> 
+			var lat=localStorage.getItem('wei');
+			var lng=localStorage.getItem('jing');
+			var sort=1;
+			var page=0;
+			var cat_id=parseUrl().cat_id;
+			$('.cat').on('click',function(){
+				if($(this).hasClass('none1')){
+					$(this).removeClass('none1');
+					$('.sort').css('display','none');
+					$('.cat_style').css('display','block');
+					$('#overlay').css('display','block');
+					$('body').css('overflow','hidden');
+					var docHeight = $(document).height(); //获取窗口高度  
+					var h = "105px";
+				    $('#overlay')  
+					    .height(docHeight)  
+					    .css({  
+					        'opacity': .5, //透明度  
+					        'position': 'absolute',  
+					        'top': h,  
+					        'left': 0,  
+					        'background-color': 'black',  
+					        'width': '100%', 
+					        'height': '100%', 
+					        'z-index': 99 //保证这个悬浮层位于其它内容之上  
+					});
+				}else{
+					$(this).addClass('none1');
+					$('.sort').css('display','none');
+					$('.cat_style').css('display','none');
+					$('#overlay').css('display','none');
+					
+				} 
+			});
+			$('.sorts').on('click',function(){
+				if($(this).hasClass('none2')){
+					$(this).removeClass('none2');
+					$('.sort').css('display','block');
+					$('.cat_style').css('display','none');
+					$('#overlay').css('display','block');
+					$('body').css('overflow','hidden');
+					var docHeight = $(document).height(); //获取窗口高度  
+					var h = "105px";
+				    $('#overlay')  
+					    .height(docHeight)  
+					    .css({  
+					        'opacity': .5, //透明度  
+					        'position': 'absolute',  
+					        'top': h,  
+					        'left': 0,  
+					        'background-color': 'black',  
+					        'width': '100%',
+					        'height': '100%',   
+					        'z-index': 99 //保证这个悬浮层位于其它内容之上  
+					});
+				}else{
+					$(this).addClass('none2');
+					$('.sort').css('display','none');
+					$('.cat_style').css('display','none');
+					$('#overlay').css('display','none');
+					
+				}
+			});
+			// 分类
+			$('.cat_style').on('click','li',function(){
+				$('.cat_style').css('display','none');
+				$('#overlay').css('display','none');
+				var text=$(this).text();
+				cat_id=$(this).attr('cat_id');
+				$('.cat').find('span').text(text);
+				$('.cat').find('span').attr('cat_id',cat_id);
+				$('.cat').addClass('none1');
+				sort=$('#sort').attr('sort');
+				wxSetTitle(text);
+				$('.mui-title').text(text);
+				shopListByCate();
+			});
+			//综合排序
+			$('.sort').on('click','li',function(){
+				$('.sort').css('display','none');
+				$('#overlay').css('display','none');
+				var text=$(this).text();
+				$('.sorts').find('span').text(text);
+				$('.sorts').addClass('none2');
+				sort=$(this).attr('sort');
+				$('.sorts').find('span').attr('sort',sort);
+				cat_id=$('#cat_id').attr('cat_id');
+				shopListByCate();
+			})
+			$('#overlay').on('click',function(){
+				$('.cat_style').css('display','none');
+				$('.sort').css('display','none');
+				$('#overlay').css('display','none');
+				$('#filter').css('display','none');
+			});
+			//筛选
+			$('.filter').on('click',function(){
+				$('.cat_style').css('display','none');
+				$('.sort').css('display','none');
+				$('#filter').css('display','block');
+				$('#overlay').css('display','block');
+				$('body').css('overflow','hidden');
+				var docHeight = $(document).height(); //获取窗口高度  
+				var h = "105px";
+			    $('#overlay')  
+				    .height(docHeight)  
+				    .css({  
+				        'opacity': .5, //透明度  
+				        'position': 'absolute',  
+				        'top': 0,  
+				        'left': 0,  
+				        'background-color': 'black',  
+				        'width': '100%', 
+				        'height': '100%', 
+				        'z-index': 99 //保证这个悬浮层位于其它内容之上  
+				});	 
+			});
+			//优惠券
+			$('.bonus_type').on('click','li',function(i,v){
+				$('.bonus_type').find('li').removeClass('active');
+				$(this).addClass('active');
+				var bonus_type=$(this).attr('bonus_type');
+				$('#bonus_type').text(bonus_type);
+			})
+			// 距离
+			$('.julitype').on('click','li',function(i,v){
+				$('.julitype').find('li').removeClass('active');
+				$(this).addClass('active');
+				var julitype=$(this).attr('julitype');
+				$('#julitype').text(julitype);
+			})
+			$('.reset').on('click',function(){
+				$('.distant_lists').find('li').removeClass('active');
+				$('#bonus_type').text('');
+				$('#julitype').text('');
+			});
+			$('.return').on('click',function(){
+				$('#overlay').css('display','none');
+				$('#filter').css('display','none');
+			});
+			$('.aifirm').on('click',function(){
+				$('#overlay').css('display','none');
+				$('#filter').css('display','none');
+				julitype=$('#julitype').text();
+				shopListByCate();
+			});
+			var title=parseUrl().title;
+			wxSetTitle(decodeURI(title));
+			$('.mui-title').text(decodeURI(title));
+			$('#cat_id').text(decodeURI(title));
+			$('#cat_id').attr('cat_id',cat_id);
+
+		/*分类下商家列表接口 shopListByCate
+			lat	float	纬度	Y	
+			lng	float	经度	Y	
+			sort	int	排序方式	Y	1综合 2距离3评价4领券数
+			julitype	int	筛选距离	N	1.<=1000 2.<=2000 3.<=3000 4.>=3000
+			bonus_type	int	筛选卡券	N	1无 2有
+			page	Int	页数	Y	
+			key	String	秘钥key	Y	
+			timestamp	Int(11)	时间戳	Y	
+			sign	String	签名	Y	
+		*/
+		function shopListByCate(){
+			var julitype=$('#julitype').text();
+			var bonus_type=$('#bonus_type').text();
+			var timestamp = Date.parse(new Date());
+			var values=['timestamp','lat','lng','sort','julitype','bonus_type','page','cat_id'];
+			var data={'timestamp':timestamp,'lat':lat,'lng':lng,'sort':sort,'julitype':julitype,'bonus_type':bonus_type,'page':page,'cat_id':cat_id};
+			var sign = doSign(values,data);
+			$.ajax({
+		        type : "post",
+		        url : url+'shopListByCate', 
+		        data:{'timestamp':timestamp,'lat':lat,'key':key,'sign':sign,'lng':lng,'sort':sort,'julitype':julitype,'bonus_type':bonus_type,'page':page,'cat_id':cat_id}, 
+		        dataType : "json",
+		        success : function(data){
+		        	console.log(data);
+		        	if(data.status==1){
+		        		console.log(data);
+		        		$('.cat_style').empty();
+		        		$('.mui-table-view').empty();
+		        		//分类
+		        		$('<li cat_id="">全部</li>').appendTo('.cat_style');
+		        		$.each(data.data.cate_list,function(i,v){
+		        			$('<li cat_id="'+v.cat_id+'">'+v.cat_name+'</li>').appendTo($('.cat_style'));
+		        		});
+		        		if(data.data.shop_list.length == 0){
+                             $('<div style=""><p style="position: absolute;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">暂无店铺信息</p></div>').appendTo($('.mui-table-view'));
+		        		}else{
+		        			$.each(data.data.shop_list,function(i,v){
+		        			var star=v.star_level;
+							var stars=Math.round(star);
+							var distants=v.juli;
+							distants=(distants/1000).toFixed(1);
+							console.log(distants);
+							if(v.shop_promotion_desc==''){
+								$('<li class="mui-table-view-cell mui-media"><a href="store.html?shop_id='+v.shop_id+'"><img class="mui-media-object mui-pull-left" src="'+v.shop_logo+'" style=" width:100%;margin-top: 3.5%;"><div class="mui-media-body"><p class="clearfix"><span class="fl mui-ellipsis" style="width:55%;">'+v.shop_name+'</span><span class="fr">'+v.city+'/'+v.district+'</span></p><p class="mui-ellipsis">'+v.shop_promotion_desc+'</p><p class="clearfix" style="margin-top:10px;"><span class="fl star"></span><span class="fr distant">'+distants+'km</span></p></div></a></li>').appendTo($('.mui-table-view'))
+							}else{
+								$('<li class="mui-table-view-cell mui-media"><a href="store.html?shop_id='+v.shop_id+'"><img class="mui-media-object mui-pull-left" src="'+v.shop_logo+'" style=" width:100%;margin-top: 3.5%;"><div class="mui-media-body"><p class="clearfix"><span class="fl mui-ellipsis" style="width:55%;">'+v.shop_name+'</span><span class="fr">'+v.city+'/'+v.district+'</span></p><p class="mui-ellipsis">'+v.shop_promotion_desc+'</p><p class="clearfix"><span class="fl star"></span><span class="fr distant">'+distants+'km</span></p></div></a></li>').appendTo($('.mui-table-view'))
+							}
+		        			
+		        			if(stars==1){
+								$('<a data-num="1" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="2" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="3" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="4" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="5" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a>').appendTo($(".star").eq(i));
+							}else if(stars==2){
+								$('<a data-num="1" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="2" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="3" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="4" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="5" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a>').appendTo($(".star").eq(i));
+							}else if(stars==3){
+								$('<a data-num="1" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="2" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="3" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="4" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a><a data-num="5" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a>').appendTo($(".star").eq(i));
+							}else if(stars==4){
+								$('<a data-num="1" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="2" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="3" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="4" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="5" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/stars.png" alt=""></span></a>').appendTo($(".star").eq(i));
+								
+							}else if(stars==5){
+								$('<a data-num="1" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="2" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="3" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="4" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a><a data-num="5" class="weui-rater-box checked"> <span class="weui-rater-inner"><img src="images/star.png" alt=""></span></a>').appendTo($(".star").eq(i));
+								
+							}
+		        			})
+		        		}
+		        		
+		        	}
+		        }  
+		    })
+		}
+		shopListByCate();
+		
+		if(GetQueryString(type)){
+			var type=parseUrl().type;
+			if(type == 1){
+				$('.mui-action-back').attr('href','search.html');
+			}
+		}
+		</script>
+	 </body>
+</html>

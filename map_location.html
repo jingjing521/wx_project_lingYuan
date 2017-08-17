@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>智慧物业</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/reset.css" rel="stylesheet" />
+		<link href="css/main.css" rel="stylesheet" />
+		<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+		<style>
+			.amap-copyright,.amap-logo{display: none !important;}
+			b, strong {font-weight: 400;}
+		</style>
+	</head>
+	<body>
+		<div id="map">
+			<!--<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">地图定位</h1>
+			</header>-->
+			<div class="mui-content">
+				<div id="container"></div>
+				<div class="tips">
+					<i><img src="imgs/top.png"/></i>
+					<h4 class="tit">隐逸SPA（金茂大厦店）</h4>
+					<p class="clearfix" style="margin-top: 10px;">
+						<span class="fl address" style="width: 70%;">世纪大道88号楼金茂君悦酒店</span>
+						<span class="fr"><strong class="distance"></strong>km</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div id="tip" style="width: 100%;height: 100px;display: none;"></div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-2.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://webapi.amap.com/maps?v=1.3&key=c493d7fedda324d9f3648b9b2d52212f"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+			// 109.010509,34.424149
+			var lat_self="109.010509";
+			var lng_self="34.424149";
+			var lat= "108.937124";
+			var lng= "34.231779";
+			//初始化地图对象，加载地图
+		    var map = new AMap.Map("container", {
+		        resizeEnable: true,
+		        center: [lng,lat],//地图中心点
+		        zoom: 13 //地图显示的缩放级别 
+		    });
+		    var tit=parseUrl().tit;
+		    $('.tit').text(decodeURI(tit));
+		    //添加点标记，并使用自己的icon
+		    new AMap.Marker({
+		        map: map,
+				position: [lng,lat],
+		        icon: new AMap.Icon({            
+		            // size: new AMap.Size(40, 50),  //图标大小
+		            image: "http://webapi.amap.com/theme/v1.3/markers/n/mark_bs.png",
+		            // imageOffset: new AMap.Pixel(0, -60)
+		        })        
+		    });
+		    AMap.plugin('AMap.Geocoder',function(){
+		        var geocoder = new AMap.Geocoder({
+		            city: ""//城市，默认：“全国”
+		        });
+		        var marker = new AMap.Marker({
+		            map:map,
+		            bubble:true
+		        });
+		        var lnglatXY=[lng,lat];//地图上所标点的坐标
+				geocoder.getAddress(lnglatXY, function(status, result) {
+				    if (status === 'complete' && result.info === 'OK') {
+				    	$('.address').text(result.regeocode.formattedAddress);
+				    	console.log(result.regeocode.formattedAddress);
+				       //获得了有效的地址信息:
+				       //即，result.regeocode.formattedAddress
+				    }else{
+				       //获取地址失败  
+				    }
+				});  
+		    });
+		    var lnglat = new AMap.LngLat(lng_self, lat_self);
+		    var distance= lnglat.distance([lng, lat]);
+		    distance=(distance/1000).toFixed(1);
+		    $('.distance').text(distance);
+		    console.log('两点间距离为：' + lnglat.distance([lng, lat]) + '米');
+		    var location1 = lng_self + ","+lat_self;
+			var dataId=lng+','+lat;
+		    $('.tips').on('click',function(){
+		    	window.location.href='http://m.amap.com/navi/?start='+location1+'&dest='+dataId+'&destName=路线&naviBy=car&key=c493d7fedda324d9f3648b9b2d52212f'
+		    });
+
+		</script>
+		
+	 </body>
+</html>
